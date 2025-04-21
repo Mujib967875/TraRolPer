@@ -28,6 +28,8 @@ use App\Http\Controllers\Admin\adminTourController;
 use App\Http\Controllers\Admin\AdminTrashController;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\AdminWelcomeItemController;
+use App\Http\Controllers\Admin\PermissionController;
+use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Comment\CommentController;
 use App\Http\Controllers\Front\FrontController;
 use App\Http\Controllers\LogActivity\LogActivityController;
@@ -35,6 +37,15 @@ use App\Http\Controllers\User\UserController;
 use App\Models\Booking;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use Spatie\Permission\Middleware\PermissionMiddleware;
+use Spatie\Permission\Middleware\RoleMiddleware;
+use Spatie\Permission\Middleware\RoleOrPermissionMiddleware;
+
+Route::middleware([
+    'permission' => PermissionMiddleware::class,
+    'role' => RoleMiddleware::class,
+    'role_or_permission' => RoleOrPermissionMiddleware::class,
+]);
 
 
 // Pages
@@ -126,11 +137,10 @@ Route::middleware('auth')
     });
 
 // Admin
-Route::middleware('admin')
+Route::middleware(['admin:super_admin'])
     ->prefix('admin')
     ->group(function () {
-        // Dashboard Section
-        Route::get('/dashboard', [AdminDashboardController::class, 'dashboard'])->name('admin_dashboard');
+        Route::get('/dashboard', [AdminDashboardController::class, 'dashboard'])->name('admin_dashboard')->middleware('role:super_admin');
 
         Route::get('/booking/report', [AdminBookingController::class, 'index'])->name('admin.laporan.pemesanan');
 
@@ -227,12 +237,12 @@ Route::middleware('admin')
         Route::get('/destination-video-delete/{id}', [AdminDestinationController::class, 'destination_video_delete'])->name('destination_video_delete');
 
         // Packages Section
-        Route::get('/packages/index', [AdminPackageController::class, 'index'])->name('admin_package_index');
-        Route::get('/packages/create', [AdminpackageController::class, 'create'])->name('admin_package_create');
-        Route::post('/packages/create', [AdminpackageController::class, 'create_submit'])->name('admin_package_create_submit');
-        Route::get('/packages/edit/{id}', [AdminpackageController::class, 'edit'])->name('admin_package_edit');
-        Route::post('/packages/edit/{id}', [AdminpackageController::class, 'edit_submit'])->name('admin_package_edit_submit');
-        Route::get('/packages/delete/{id}', [AdminpackageController::class, 'delete'])->name('admin_package_delete');
+        Route::get('/packages/index', [AdminPackageController::class, 'index'])->name('admin_package_index')->middleware(['permission:manage package']);
+        Route::get('/packages/create', [AdminpackageController::class, 'create'])->name('admin_package_create')->middleware(['permission:manage package']);
+        Route::post('/packages/create', [AdminpackageController::class, 'create_submit'])->name('admin_package_create_submit')->middleware(['permission:manage package']);
+        Route::get('/packages/edit/{id}', [AdminpackageController::class, 'edit'])->name('admin_package_edit')->middleware(['permission:manage package']);
+        Route::post('/packages/edit/{id}', [AdminpackageController::class, 'edit_submit'])->name('admin_package_edit_submit')->middleware(['permission:manage package']);
+        Route::get('/packages/delete/{id}', [AdminpackageController::class, 'delete'])->name('admin_package_delete')->middleware(['permission:manage package']);
 
         // Package Amenity Section
         Route::get('/package-amenities/{id}', [AdminPackageController::class, 'package_amenities'])->name('package_amenities');
@@ -342,6 +352,17 @@ Route::middleware('admin')
         // LOG Section
         Route::get('/log/activity/admin', [LogActivityController::class, 'indexAdmin']);
         Route::get('/log/activity/user', [LogActivityController::class, 'indexUser']);
+
+
+
+        Route::resource('roles', RoleController::class);
+        Route::resource('permissions', PermissionController::class);
+
+        Route::get('assign-role', [RoleController::class, 'assignRoleForm'])->name('assign.role.form');
+        Route::post('assign-role', [RoleController::class, 'assignRoleSubmit'])->name('assign.role.submit');
+        Route::delete('/user/{user}/role/{role}', [RoleController::class, 'removeRole'])->name('user.removeRole');
+
+
 
         // Slider Trash Section
         Route::get('/slider/trash', [AdminTrashController::class, 'SliderTrash'])->name('admin_slider_trash');

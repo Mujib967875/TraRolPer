@@ -9,9 +9,11 @@
 
         <ul class="sidebar-menu">
 
+            @can('super_admin')
             <li class="{{ Route::is('admin_dashboard') ? 'active' : '' }}"><a class="nav-link"
-                    href="{{ route('admin_dashboard') }}"><i class="fab fa-dashcube"></i>
-                    <span>Dashboard</span></a></li>
+                href="{{ route('admin_dashboard') }}"><i class="fab fa-dashcube"></i>
+                <span>Dashboard</span></a></li>
+            @endcan
 
             <li class="{{ Route::is('admin.laporan.pemesanan') ? 'active' : '' }}"><a class="nav-link"
                     href="{{ route('admin.laporan.pemesanan') }}"><i class="fas fa-cash-register"></i>
@@ -106,6 +108,21 @@
             <li class="{{ Route::is('sponsor_index') ? 'active' : '' }}"><a class="nav-link"
                     href="{{ route('sponsor_index') }}"><i class="fas fa-users-cog"></i>
                     <span>Sponsor</span></a></li>
+
+                <li class="nav-item dropdown {{ Route::is('permissions.index') || Route::is('roles.index') || Route::is('assign.role.form') ? 'active' : '' }}">
+                    <a href="#" class="nav-link has-dropdown"><i class="fas fa-user">
+                        </i><span> Semua Peran & Perizinan</span></a>
+                    <ul class="dropdown-menu">
+                        <li class="{{ Route::is('permissions.index') ? 'active' : '' }}"><a class="nav-link"
+                                href="{{ route('permissions.index') }}"><i
+                                    class="fas fa-angle-right"></i><span>Kelola Perizinan</span></a></li>
+                        <li class="{{ Route::is('roles.index') ? 'active' : '' }}"><a class="nav-link"
+                                href="{{ route('roles.index') }}"><i class="fas fa-angle-right"></i><span> Kelola Peran & Perizinan</span></a></li>
+                        <li class="{{ Route::is('assign.role.form') ? 'active' : '' }}"><a class="nav-link"
+                                href="{{ route('assign.role.form') }}"><i
+                                    class="fas fa-angle-right"></i><span>Kelola Akses</span></a></li>
+                    </ul>
+                </li>
 
             <li class="{{ Route::is('admin_home_page_item_index') ? 'active' : '' }}"><a class="nav-link"
                     href="{{ route('admin_home_page_item_index') }}"><i class="fas fa-laptop-house"></i>

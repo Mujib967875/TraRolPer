@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 20, 2025 at 04:11 PM
+-- Generation Time: Apr 22, 2025 at 01:46 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -478,7 +478,15 @@ INSERT INTO `activity_log` (`id`, `log_name`, `description`, `subject_type`, `ev
 (379, 'default', 'Admin admin-1 Menambahkan Photo di Package Outing Regular A (2 Day 1 Night In The Villa)', 'App\\Models\\PackagePhoto', 'created', 13, 'App\\Models\\Admin', 1, '{\"attributes\":{\"package_id\":\"13\",\"photo\":\"package_1745156216.avif\",\"updated_at\":\"2025-04-20 13:36:56\",\"created_at\":\"2025-04-20 13:36:56\",\"id\":40},\"old\":\"Null\"}', NULL, '2025-04-20 06:36:56', '2025-04-20 06:36:56'),
 (380, 'default', 'Admin admin-1 Menambahkan Video di Package Outing Regular A (2 Day 1 Night In The Villa)', 'App\\Models\\PackageVideo', 'created', 13, 'App\\Models\\Admin', 1, '{\"attributes\":{\"package_id\":\"13\",\"video\":\"DuU-bZdtr38\",\"updated_at\":\"2025-04-20 13:39:12\",\"created_at\":\"2025-04-20 13:39:12\",\"id\":14},\"old\":\"Null\"}', NULL, '2025-04-20 06:39:12', '2025-04-20 06:39:12'),
 (381, 'default', 'Admin admin-1 Menambahkan Video di Package Outing Regular A (2 Day 1 Night In The Villa)', 'App\\Models\\PackageVideo', 'created', 13, 'App\\Models\\Admin', 1, '{\"attributes\":{\"package_id\":\"13\",\"video\":\"LXtZH04NHoQ\",\"updated_at\":\"2025-04-20 13:39:31\",\"created_at\":\"2025-04-20 13:39:31\",\"id\":15},\"old\":\"Null\"}', NULL, '2025-04-20 06:39:31', '2025-04-20 06:39:31'),
-(382, 'default', 'Admin admin-1 Menambahkan Tour untuk Package Outing Regular A (2 Day 1 Night In The Villa)', 'App\\Models\\Tour', 'created', 13, 'App\\Models\\Admin', 1, '{\"attributes\":{\"package_id\":\"13\",\"tour_start_date\":\"2025-04-29\",\"tour_end_date\":\"2025-04-30\",\"booking_end_date\":\"2025-04-27\",\"total_seat\":\"100\",\"updated_at\":\"2025-04-20 13:46:02\",\"created_at\":\"2025-04-20 13:46:02\",\"id\":13},\"old\":\"Null\"}', NULL, '2025-04-20 06:46:02', '2025-04-20 06:46:02');
+(382, 'default', 'Admin admin-1 Menambahkan Tour untuk Package Outing Regular A (2 Day 1 Night In The Villa)', 'App\\Models\\Tour', 'created', 13, 'App\\Models\\Admin', 1, '{\"attributes\":{\"package_id\":\"13\",\"tour_start_date\":\"2025-04-29\",\"tour_end_date\":\"2025-04-30\",\"booking_end_date\":\"2025-04-27\",\"total_seat\":\"100\",\"updated_at\":\"2025-04-20 13:46:02\",\"created_at\":\"2025-04-20 13:46:02\",\"id\":13},\"old\":\"Null\"}', NULL, '2025-04-20 06:46:02', '2025-04-20 06:46:02'),
+(383, 'default', 'Admin admin-1 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-21 04:27:31', '2025-04-21 04:27:31'),
+(384, 'default', 'Admin admin-1 Melakukan logout', NULL, 'logout', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-21 06:34:38', '2025-04-21 06:34:38'),
+(385, 'default', 'Admin admin-1 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-21 06:34:49', '2025-04-21 06:34:49'),
+(386, 'default', 'Admin admin-1 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-21 15:56:58', '2025-04-21 15:56:58'),
+(387, 'default', 'Admin admin-1 Melakukan logout', NULL, 'logout', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-21 16:10:54', '2025-04-21 16:10:54'),
+(388, 'default', 'Admin admin2 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 2, '[]', NULL, '2025-04-21 16:11:03', '2025-04-21 16:11:03'),
+(389, 'default', 'Admin admin2 Melakukan logout', NULL, 'logout', NULL, 'App\\Models\\Admin', 2, '[]', NULL, '2025-04-21 16:30:22', '2025-04-21 16:30:22'),
+(390, 'default', 'Admin admin-1 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-21 16:30:30', '2025-04-21 16:30:30');
 
 -- --------------------------------------------------------
 
@@ -503,7 +511,7 @@ CREATE TABLE `admins` (
 
 INSERT INTO `admins` (`id`, `name`, `email`, `photo`, `password`, `token`, `created_at`, `updated_at`) VALUES
 (1, 'admin-1', 'admin@gmail.com', 'admin_1735390234.jpg', '$2y$12$baQaUb90HhTUzFvoUMJNLuu.ZIw/tWBUKFJ0o2p5dStR89DTtZLCK', '', '2024-11-20 03:13:16', '2025-03-11 01:46:32'),
-(2, 'admin2', 'admin2@gmail.com', 'admin_1737442051.jpg', '$2y$12$0lWhzpkIPlPlZZd3DAl5b.5MH/eTNtsmGZciEW49WLUAvBAY6hyyq', NULL, NULL, '2025-01-20 23:47:31');
+(2, 'admin2', 'admin2@gmail.com', 'admin_1737442051.jpg', '$2y$12$baQaUb90HhTUzFvoUMJNLuu.ZIw/tWBUKFJ0o2p5dStR89DTtZLCK', NULL, NULL, '2025-01-20 23:47:31');
 
 -- --------------------------------------------------------
 
@@ -1140,7 +1148,40 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (77, '2025_04_16_055322_create_rooms_table', 60),
 (79, '2025_04_17_043039_create_accommodation_tour_table', 61),
 (80, '2025_04_16_055359_create_booking_rooms_table', 62),
-(81, '2025_04_18_085618_create_package_amenity_photos_table', 63);
+(81, '2025_04_18_085618_create_package_amenity_photos_table', 63),
+(82, '2025_04_21_113728_create_permission_tables', 64);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `model_has_permissions`
+--
+
+CREATE TABLE `model_has_permissions` (
+  `permission_id` bigint(20) UNSIGNED NOT NULL,
+  `model_type` varchar(255) NOT NULL,
+  `model_id` bigint(20) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `model_has_roles`
+--
+
+CREATE TABLE `model_has_roles` (
+  `role_id` bigint(20) UNSIGNED NOT NULL,
+  `model_type` varchar(255) NOT NULL,
+  `model_id` bigint(20) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `model_has_roles`
+--
+
+INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
+(2, 'App\\Models\\Admin', 1),
+(5, 'App\\Models\\Admin', 2);
 
 -- --------------------------------------------------------
 
@@ -1531,6 +1572,30 @@ CREATE TABLE `password_reset_tokens` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `permissions`
+--
+
+CREATE TABLE `permissions` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `guard_name` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `permissions`
+--
+
+INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
+(1, 'view dashboard', 'admin', '2025-04-21 04:46:23', '2025-04-21 04:46:23'),
+(2, 'manage admin', 'admin', '2025-04-21 04:46:23', '2025-04-21 04:46:23'),
+(3, 'manage package', 'admin', '2025-04-21 04:46:23', '2025-04-21 04:46:23'),
+(4, 'export laporan', 'admin', '2025-04-21 04:46:23', '2025-04-21 04:46:23');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `personal_access_tokens`
 --
 
@@ -1602,6 +1667,51 @@ INSERT INTO `reviews` (`id`, `user_id`, `package_id`, `rating`, `comment`, `crea
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `roles`
+--
+
+CREATE TABLE `roles` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `guard_name` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `roles`
+--
+
+INSERT INTO `roles` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
+(2, 'super_admin', 'admin', '2025-04-21 04:42:37', '2025-04-21 04:42:37'),
+(5, 'admin', 'admin', '2025-04-21 15:58:09', '2025-04-21 15:58:09');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `role_has_permissions`
+--
+
+CREATE TABLE `role_has_permissions` (
+  `permission_id` bigint(20) UNSIGNED NOT NULL,
+  `role_id` bigint(20) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `role_has_permissions`
+--
+
+INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
+(1, 2),
+(1, 5),
+(2, 2),
+(3, 2),
+(3, 5),
+(4, 2);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `rooms`
 --
 
@@ -1644,7 +1754,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('W0ZkJ6DJZj9JBPgd5xF8wrOqto47Ob75VYh4nfy3', 6, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiZmhNWFRuekd5ZGxienNna0pwN09ab3d4enhlSnExUkpoZllrMzVHNiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NzM6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wYWNrYWdlL291dGluZy1yZWd1bGFyLUEtMi1kYXktMS1uaWdodC1pbi10aGUtdmlsbGEiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUyOiJsb2dpbl9hZG1pbl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxNDoidXJsX3NlYmVsdW1ueWEiO3M6Mjc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9sb2dpbiI7czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6Njt9', 1745157848);
+('SkPZnmXD8Vp8NfgMUIofpIwuBmOZpcL7wBTYynSt', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiSTdRUmp1RjI0aGUxRk5sU2s0a3BudTZjempLV2Z5QWk5aEVBa0t4NyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9yb2xlcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTI6ImxvZ2luX2FkbWluXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1745278536);
 
 -- --------------------------------------------------------
 
@@ -2122,6 +2232,20 @@ ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `model_has_permissions`
+--
+ALTER TABLE `model_has_permissions`
+  ADD PRIMARY KEY (`permission_id`,`model_id`,`model_type`),
+  ADD KEY `model_has_permissions_model_id_model_type_index` (`model_id`,`model_type`);
+
+--
+-- Indexes for table `model_has_roles`
+--
+ALTER TABLE `model_has_roles`
+  ADD PRIMARY KEY (`role_id`,`model_id`,`model_type`),
+  ADD KEY `model_has_roles_model_id_model_type_index` (`model_id`,`model_type`);
+
+--
 -- Indexes for table `orders`
 --
 ALTER TABLE `orders`
@@ -2176,6 +2300,13 @@ ALTER TABLE `password_reset_tokens`
   ADD PRIMARY KEY (`email`);
 
 --
+-- Indexes for table `permissions`
+--
+ALTER TABLE `permissions`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `permissions_name_guard_name_unique` (`name`,`guard_name`);
+
+--
 -- Indexes for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
@@ -2194,6 +2325,20 @@ ALTER TABLE `posts`
 --
 ALTER TABLE `reviews`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `roles`
+--
+ALTER TABLE `roles`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `roles_name_guard_name_unique` (`name`,`guard_name`);
+
+--
+-- Indexes for table `role_has_permissions`
+--
+ALTER TABLE `role_has_permissions`
+  ADD PRIMARY KEY (`permission_id`,`role_id`),
+  ADD KEY `role_has_permissions_role_id_foreign` (`role_id`);
 
 --
 -- Indexes for table `rooms`
@@ -2297,7 +2442,7 @@ ALTER TABLE `accommodations`
 -- AUTO_INCREMENT for table `activity_log`
 --
 ALTER TABLE `activity_log`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=383;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=391;
 
 --
 -- AUTO_INCREMENT for table `admins`
@@ -2411,7 +2556,7 @@ ALTER TABLE `message_comments`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- AUTO_INCREMENT for table `orders`
@@ -2462,6 +2607,12 @@ ALTER TABLE `package_videos`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
+-- AUTO_INCREMENT for table `permissions`
+--
+ALTER TABLE `permissions`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
@@ -2478,6 +2629,12 @@ ALTER TABLE `posts`
 --
 ALTER TABLE `reviews`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `roles`
+--
+ALTER TABLE `roles`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `rooms`
@@ -2569,6 +2726,25 @@ ALTER TABLE `booking_rooms`
 --
 ALTER TABLE `comments`
   ADD CONSTRAINT `comments_post_id_foreign` FOREIGN KEY (`post_id`) REFERENCES `posts` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `model_has_permissions`
+--
+ALTER TABLE `model_has_permissions`
+  ADD CONSTRAINT `model_has_permissions_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `model_has_roles`
+--
+ALTER TABLE `model_has_roles`
+  ADD CONSTRAINT `model_has_roles_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `role_has_permissions`
+--
+ALTER TABLE `role_has_permissions`
+  ADD CONSTRAINT `role_has_permissions_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `role_has_permissions_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `rooms`

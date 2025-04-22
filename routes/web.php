@@ -137,10 +137,10 @@ Route::middleware('auth')
     });
 
 // Admin
-Route::middleware(['admin:super_admin'])
+Route::middleware(['admin:admin'])
     ->prefix('admin')
     ->group(function () {
-        Route::get('/dashboard', [AdminDashboardController::class, 'dashboard'])->name('admin_dashboard')->middleware('role:super_admin');
+        Route::get('/dashboard', [AdminDashboardController::class, 'dashboard'])->name('admin_dashboard');
 
         Route::get('/booking/report', [AdminBookingController::class, 'index'])->name('admin.laporan.pemesanan');
 
@@ -155,12 +155,12 @@ Route::middleware(['admin:super_admin'])
         Route::post('/profile', [AdminAuthController::class, 'profile_submit'])->name('admin_profile_submit');
 
         // Sliders Section
-        Route::get('/sliders/index', [AdminSliderController::class, 'index'])->name('admin_slider_index');
-        Route::get('/sliders/create', [AdminSliderController::class, 'create'])->name('admin_slider_create');
-        Route::post('/sliders/create', [AdminSliderController::class, 'create_submit'])->name('admin_slider_create_submit');
-        Route::get('/sliders/edit/{id}', [AdminSliderController::class, 'edit'])->name('admin_slider_edit');
-        Route::post('/sliders/edit/{id}', [AdminSliderController::class, 'edit_submit'])->name('admin_slider_edit_submit');
-        Route::get('/sliders/delete/{id}', [AdminSliderController::class, 'delete'])->name('admin_slider_delete');
+        Route::get('/sliders/index', [AdminSliderController::class, 'index'])->name('admin_slider_index')->middleware('permission:manage,admin');
+        Route::get('/sliders/create', [AdminSliderController::class, 'create'])->name('admin_slider_create')->middleware('permission:manage,admin');
+        Route::post('/sliders/create', [AdminSliderController::class, 'create_submit'])->name('admin_slider_create_submit')->middleware('permission:manage,admin');
+        Route::get('/sliders/edit/{id}', [AdminSliderController::class, 'edit'])->name('admin_slider_edit')->middleware('permission:manage,admin');
+        Route::post('/sliders/edit/{id}', [AdminSliderController::class, 'edit_submit'])->name('admin_slider_edit_submit')->middleware('permission:manage,admin');
+        Route::get('/sliders/delete/{id}', [AdminSliderController::class, 'delete'])->name('admin_slider_delete')->middleware('permission:manage,admin');
 
         // Welcome Items Section
         Route::get('/welcome-items/index', [AdminWelcomeItemController::class, 'index'])->name('admin_welcome_item_index');
@@ -237,12 +237,12 @@ Route::middleware(['admin:super_admin'])
         Route::get('/destination-video-delete/{id}', [AdminDestinationController::class, 'destination_video_delete'])->name('destination_video_delete');
 
         // Packages Section
-        Route::get('/packages/index', [AdminPackageController::class, 'index'])->name('admin_package_index')->middleware(['permission:manage package']);
-        Route::get('/packages/create', [AdminpackageController::class, 'create'])->name('admin_package_create')->middleware(['permission:manage package']);
-        Route::post('/packages/create', [AdminpackageController::class, 'create_submit'])->name('admin_package_create_submit')->middleware(['permission:manage package']);
-        Route::get('/packages/edit/{id}', [AdminpackageController::class, 'edit'])->name('admin_package_edit')->middleware(['permission:manage package']);
-        Route::post('/packages/edit/{id}', [AdminpackageController::class, 'edit_submit'])->name('admin_package_edit_submit')->middleware(['permission:manage package']);
-        Route::get('/packages/delete/{id}', [AdminpackageController::class, 'delete'])->name('admin_package_delete')->middleware(['permission:manage package']);
+        Route::get('/packages/index', [AdminPackageController::class, 'index'])->name('admin_package_index');
+        Route::get('/packages/create', [AdminpackageController::class, 'create'])->name('admin_package_create');
+        Route::post('/packages/create', [AdminpackageController::class, 'create_submit'])->name('admin_package_create_submit');
+        Route::get('/packages/edit/{id}', [AdminpackageController::class, 'edit'])->name('admin_package_edit');
+        Route::post('/packages/edit/{id}', [AdminpackageController::class, 'edit_submit'])->name('admin_package_edit_submit');
+        Route::get('/packages/delete/{id}', [AdminpackageController::class, 'delete'])->name('admin_package_delete');
 
         // Package Amenity Section
         Route::get('/package-amenities/{id}', [AdminPackageController::class, 'package_amenities'])->name('package_amenities');

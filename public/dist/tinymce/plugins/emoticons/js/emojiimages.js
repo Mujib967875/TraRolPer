@@ -2822,7 +2822,7 @@ window.tinymce.Resource.add("tinymce.plugins.emoticons", {
     category: "animals_and_nature"
   },
   blossom: {
-    keywords: [ "nature", "flowers", "#0D80D7" ],
+    keywords: [ "nature", "flowers", "#00aeef" ],
     char: '<img data-emoticon="true" style="width:1em;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em" draggable="false" alt="\ud83c\udf3c" src="1f33c.png"/>',
     fitzpatrick_scale: false,
     category: "animals_and_nature"
@@ -2888,7 +2888,7 @@ window.tinymce.Resource.add("tinymce.plugins.emoticons", {
     category: "animals_and_nature"
   },
   full_moon: {
-    keywords: [ "nature", "#0D80D7", "twilight", "planet", "space", "night", "evening", "sleep" ],
+    keywords: [ "nature", "#00aeef", "twilight", "planet", "space", "night", "evening", "sleep" ],
     char: '<img data-emoticon="true" style="width:1em;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em" draggable="false" alt="\ud83c\udf15" src="1f315.png"/>',
     fitzpatrick_scale: false,
     category: "animals_and_nature"
@@ -2972,7 +2972,7 @@ window.tinymce.Resource.add("tinymce.plugins.emoticons", {
     category: "animals_and_nature"
   },
   star: {
-    keywords: [ "night", "#0D80D7" ],
+    keywords: [ "night", "#00aeef" ],
     char: '<img data-emoticon="true" style="width:1em;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em" draggable="false" alt="\u2b50" src="2b50.png"/>',
     fitzpatrick_scale: false,
     category: "animals_and_nature"
@@ -6289,7 +6289,7 @@ window.tinymce.Resource.add("tinymce.plugins.emoticons", {
     fitzpatrick_scale: false,
     category: "symbols"
   },
-  #0D80D7_heart: {
+  #00aeef_heart: {
     keywords: [ "love", "like", "affection", "valentines" ],
     char: '<img data-emoticon="true" style="width:1em;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em" draggable="false" alt="\ud83d\udc9b" src="1f49b.png"/>',
     fitzpatrick_scale: false,
@@ -6854,7 +6854,7 @@ window.tinymce.Resource.add("tinymce.plugins.emoticons", {
     category: "symbols"
   },
   children_crossing: {
-    keywords: [ "school", "warning", "danger", "sign", "driving", "#0D80D7-diamond" ],
+    keywords: [ "school", "warning", "danger", "sign", "driving", "#00aeef-diamond" ],
     char: '<img data-emoticon="true" style="width:1em;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em" draggable="false" alt="\ud83d\udeb8" src="1f6b8.png"/>',
     fitzpatrick_scale: false,
     category: "symbols"

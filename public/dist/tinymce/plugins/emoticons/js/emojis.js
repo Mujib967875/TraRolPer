@@ -2809,7 +2809,7 @@ window.tinymce.Resource.add("tinymce.plugins.emoticons", {
     category: "animals_and_nature"
   },
   blossom: {
-    keywords: [ "nature", "flowers", "#0D80D7" ],
+    keywords: [ "nature", "flowers", "#00aeef" ],
     char: "\ud83c\udf3c",
     fitzpatrick_scale: false,
     category: "animals_and_nature"
@@ -2875,7 +2875,7 @@ window.tinymce.Resource.add("tinymce.plugins.emoticons", {
     category: "animals_and_nature"
   },
   full_moon: {
-    keywords: [ "nature", "#0D80D7", "twilight", "planet", "space", "night", "evening", "sleep" ],
+    keywords: [ "nature", "#00aeef", "twilight", "planet", "space", "night", "evening", "sleep" ],
     char: "\ud83c\udf15",
     fitzpatrick_scale: false,
     category: "animals_and_nature"
@@ -2959,7 +2959,7 @@ window.tinymce.Resource.add("tinymce.plugins.emoticons", {
     category: "animals_and_nature"
   },
   star: {
-    keywords: [ "night", "#0D80D7" ],
+    keywords: [ "night", "#00aeef" ],
     char: "\u2b50",
     fitzpatrick_scale: false,
     category: "animals_and_nature"
@@ -6276,7 +6276,7 @@ window.tinymce.Resource.add("tinymce.plugins.emoticons", {
     fitzpatrick_scale: false,
     category: "symbols"
   },
-  #0D80D7_heart: {
+  #00aeef_heart: {
     keywords: [ "love", "like", "affection", "valentines" ],
     char: "\ud83d\udc9b",
     fitzpatrick_scale: false,
@@ -6847,7 +6847,7 @@ window.tinymce.Resource.add("tinymce.plugins.emoticons", {
     category: "symbols"
   },
   children_crossing: {
-    keywords: [ "school", "warning", "danger", "sign", "driving", "#0D80D7-diamond" ],
+    keywords: [ "school", "warning", "danger", "sign", "driving", "#00aeef-diamond" ],
     char: "\ud83d\udeb8",
     fitzpatrick_scale: false,
     category: "symbols"

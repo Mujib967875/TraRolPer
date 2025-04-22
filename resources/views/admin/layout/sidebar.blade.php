@@ -9,23 +9,30 @@
 
         <ul class="sidebar-menu">
 
-            @can('super_admin')
+
             <li class="{{ Route::is('admin_dashboard') ? 'active' : '' }}"><a class="nav-link"
                 href="{{ route('admin_dashboard') }}"><i class="fab fa-dashcube"></i>
-                <span>Dashboard</span></a></li>
-            @endcan
+                <span>Dashboard</span></a>
+            </li>
 
-            <li class="{{ Route::is('admin.laporan.pemesanan') ? 'active' : '' }}"><a class="nav-link"
-                    href="{{ route('admin.laporan.pemesanan') }}"><i class="fas fa-cash-register"></i>
-                    <span>Laporan Pemesanan</span></a></li>
+            @if(auth('admin')->user()?->can('view'))
+                <li class="{{ Route::is('admin.laporan.pemesanan') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('admin.laporan.pemesanan') }}">
+                        <i class="fas fa-cash-register"></i> <span>Laporan Pemesanan</span>
+                    </a>
+                </li>
+
+                @if(auth('admin')->user()?->can('manage'))
+                <li class="{{ Route::is('admin_slider_index') ? 'active' : '' }}"><a class="nav-link"
+                    href="{{ route('admin_slider_index') }}"><i class="fas fa-sliders-h"></i>
+                    <span>Slider</span></a>
+                </li>
+                @endif
+            @endif
 
             <li class="{{ Route::is('admin_setting_index') ? 'active' : '' }}"><a class="nav-link"
                     href="{{ route('admin_setting_index') }}"><i class="fas fa-cogs"></i>
                     <span>Pengaturan</span></a></li>
-
-            <li class="{{ Route::is('admin_slider_index') ? 'active' : '' }}"><a class="nav-link"
-                    href="{{ route('admin_slider_index') }}"><i class="fas fa-sliders-h"></i>
-                    <span>Slider</span></a></li>
 
             <li class="{{ Route::is('admin_amenity_index') ? 'active' : '' }}"><a class="nav-link"
                     href="{{ route('admin_amenity_index') }}"><i class="fas fa-umbrella-beach"></i>
@@ -108,6 +115,8 @@
             <li class="{{ Route::is('sponsor_index') ? 'active' : '' }}"><a class="nav-link"
                     href="{{ route('sponsor_index') }}"><i class="fas fa-users-cog"></i>
                     <span>Sponsor</span></a></li>
+
+
 
                 <li class="nav-item dropdown {{ Route::is('permissions.index') || Route::is('roles.index') || Route::is('assign.role.form') ? 'active' : '' }}">
                     <a href="#" class="nav-link has-dropdown"><i class="fas fa-user">

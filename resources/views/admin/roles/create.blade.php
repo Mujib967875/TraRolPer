@@ -3,6 +3,20 @@
 @section('main_content')
     @include('admin.layout.nav')
     @include('admin.layout.sidebar')
+
+    <style>
+        .card {
+            /* border-radius: 12px; */
+            border: 1px solid #ddd;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+
+
     <div class="main-content">
         <section class="section">
             <div class="section-header justify-content-between">
@@ -23,28 +37,50 @@
 
                                     <div class="mb-3">
                                         <label class="form-label">Nama Role *</label>
-                                        <input type="text" class="form-control" name="name" placeholder="Contoh: admin, editor, dll" required>
+                                        <input type="text" class="form-control" name="name"
+                                            placeholder="Contoh: admin, editor, dll" required>
                                     </div>
 
-                                    <div class="mb-3">
-                                        <label class="form-label">Pilih Permission *</label>
-                                        <div class="mb-3">
-                                            <div class="form-check">
-                                                <input type="checkbox" class="form-check-input" id="checkAllPermissions">
-                                                <label class="form-check-label" for="checkAllPermissions">Pilih Semua</label>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            @foreach($permissions as $permission)
-                                                <div class="col-md-3 mb-2">
-                                                    <div class="form-check">
-                                                        <input type="checkbox" name="permissions[]" value="{{ $permission->name }}" class="form-check-input permission-checkbox" id="perm_{{ $permission->id }}">
-                                                        <label class="form-check-label" for="perm_{{ $permission->id }}">{{ $permission->name }}</label>
+                                    <div class="row">
+                                        @foreach ($groupedPermissions as $modul => $perms)
+                                            @if ($modul === 'lainnya' && !(auth()->check() && auth()->user()->hasRole('super_admin')))
+                                                @continue
+                                            @endif
+
+                                            <div class="col-md-6 col-lg-4 mb-2">
+                                                <div class="card h-100 shadow-sm">
+                                                    <div class="card-body">
+                                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                                            <h5 class="fw-bold text-dark text-capitalize m-0">
+                                                                {{ str_replace('_', ' ', $modul) }}</h5>
+                                                            <div class="form-check">
+                                                                <input type="checkbox"
+                                                                    class="form-check-input check-all-per-modul"
+                                                                    data-target="{{ $modul }}"
+                                                                    id="check-{{ $modul }}">
+                                                                <label class="form-check-label"
+                                                                    for="check-{{ $modul }}">Pilih Semua</label>
+                                                            </div>
+                                                        </div>
+
+
+
+                                                        <div class="row">
+                                                            @foreach($perms as $permission)
+                                                                <div class="col-12">
+                                                                    <label>
+                                                                        <input type="checkbox" name="permissions[]" class="check-permission-item mb-3 check-{{ $modul }}" value="{{ $permission->name }}">
+                                                                        {{ $permission->name }}
+                                                                    </label>
+                                                                </div>
+                                                            @endforeach
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            @endforeach
-                                        </div>
+                                            </div>
+                                        @endforeach
                                     </div>
+
 
 
                                     <div class="mb-3">
@@ -62,14 +98,13 @@
         </section>
     </div>
 
-<script>
-    document.getElementById('checkAllPermissions').addEventListener('change', function() {
-        const isChecked = this.checked;
-        document.querySelectorAll('.permission-checkbox').forEach(function(checkbox) {
-            checkbox.checked = isChecked;
+    <script>
+        document.querySelectorAll('.check-all-per-modul').forEach(modulCheckbox => {
+            modulCheckbox.addEventListener('change', function() {
+                const target = this.getAttribute('data-target');
+                const checkboxes = document.querySelectorAll(`.check-${target}`);
+                checkboxes.forEach(cb => cb.checked = this.checked);
+            });
         });
-    });
-</script>
-
-
+    </script>
 @endsection

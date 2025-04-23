@@ -19,7 +19,12 @@ class RoleController extends Controller
     public function create()
     {
         $permissions = Permission::all();
-        return view('admin.roles.create', compact('permissions'));
+
+        $groupedPermissions = $permissions->groupBy(function($permission) {
+            return explode('.', $permission->name)[1] ?? 'lainnya';
+        });
+
+        return view('admin.roles.create', compact('groupedPermissions'));
     }
 
     public function store(Request $request)
@@ -29,6 +34,8 @@ class RoleController extends Controller
             'guard_name' => 'admin',
         ]);
 
+
+
         $role->syncPermissions($request->permissions);
         return redirect()->route('roles.index')->with('success', 'Role berhasil ditambahkan!');
     }
@@ -36,9 +43,16 @@ class RoleController extends Controller
     public function edit(Role $role)
     {
         $permissions = Permission::all();
+
+        $groupedPermissions = $permissions->groupBy(function ($item) {
+            return explode('.', $item->name)[1] ?? 'lainnya';
+        });
+
         $rolePermissions = $role->permissions->pluck('name')->toArray();
-        return view('admin.roles.edit', compact('role', 'permissions', 'rolePermissions'));
+
+        return view('admin.roles.edit', compact('role', 'groupedPermissions', 'rolePermissions'));
     }
+
 
     public function update(Request $request, Role $role)
     {

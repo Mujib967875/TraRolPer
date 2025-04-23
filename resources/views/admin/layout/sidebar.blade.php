@@ -9,34 +9,39 @@
 
         <ul class="sidebar-menu">
 
+        {{-- @if(auth('admin')->user()?->role('super_admin')) --}}
 
-            <li class="{{ Route::is('admin_dashboard') ? 'active' : '' }}"><a class="nav-link"
-                href="{{ route('admin_dashboard') }}"><i class="fab fa-dashcube"></i>
-                <span>Dashboard</span></a>
-            </li>
+            @if(auth('admin')->user()?->can('lihat.dashboard'))
+                <li class="{{ Route::is('admin_dashboard') ? 'active' : '' }}"><a class="nav-link"
+                    href="{{ route('admin_dashboard') }}"><i class="fab fa-dashcube"></i>
+                    <span>Dashboard</span></a>
+                </li>
+            @endif
 
-            @if(auth('admin')->user()?->can('view'))
+            @if(auth('admin')->user()?->can('lihat.laporan'))
                 <li class="{{ Route::is('admin.laporan.pemesanan') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('admin.laporan.pemesanan') }}">
                         <i class="fas fa-cash-register"></i> <span>Laporan Pemesanan</span>
                     </a>
                 </li>
+            @endif
 
-                @if(auth('admin')->user()?->can('manage'))
+            @if(auth('admin')->user()?->can('lihat.slider'))
                 <li class="{{ Route::is('admin_slider_index') ? 'active' : '' }}"><a class="nav-link"
                     href="{{ route('admin_slider_index') }}"><i class="fas fa-sliders-h"></i>
                     <span>Slider</span></a>
                 </li>
-                @endif
             @endif
 
-            <li class="{{ Route::is('admin_setting_index') ? 'active' : '' }}"><a class="nav-link"
-                    href="{{ route('admin_setting_index') }}"><i class="fas fa-cogs"></i>
-                    <span>Pengaturan</span></a></li>
+            @if(auth('admin')->user()?->can('lihat.pengaturan'))
+                <li class="{{ Route::is('admin_setting_index') ? 'active' : '' }}"><a class="nav-link"
+                        href="{{ route('admin_setting_index') }}"><i class="fas fa-cogs"></i>
+                        <span>Pengaturan</span></a></li>
+            @endif
 
-            <li class="{{ Route::is('admin_amenity_index') ? 'active' : '' }}"><a class="nav-link"
+            {{-- <li class="{{ Route::is('admin_amenity_index') ? 'active' : '' }}"><a class="nav-link"
                     href="{{ route('admin_amenity_index') }}"><i class="fas fa-umbrella-beach"></i>
-                    <span>Fasilitas</span></a></li>
+                    <span>Fasilitas</span></a></li> --}}
 
             <li class="{{ Route::is('admin_review_index') ? 'active' : '' }}"><a class="nav-link"
                     href="{{ route('admin_review_index') }}"><i class="far fa-grin-beam"></i>
@@ -164,6 +169,9 @@
             <li class="{{ Request::is('admin/log/activity/user') ? 'active' : '' }}"><a class="nav-link"
                     href="{{ url('admin/log/activity/user') }}"><i class="fas fa-user-secret"></i>
                     <span>Log Aktivitas Pengguna</span></a></li>
+
+            {{-- @endif --}}
+
         </ul>
     </aside>
 </div>

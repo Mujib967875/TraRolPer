@@ -22,7 +22,10 @@ class PermissionController extends Controller
     public function store(Request $request)
     {
         $request->validate(['name' => 'required|unique:permissions']);
-        Permission::create(['name' => $request->name]);
+        Permission::create([
+            'name' => $request->name,
+            'guard_name' => 'admin',
+        ]);
 
         return redirect()->route('permissions.index')->with('success', 'Permission berhasil dibuat');
     }

@@ -9,25 +9,39 @@
 
         <ul class="sidebar-menu">
 
-            <li class="{{ Route::is('admin_dashboard') ? 'active' : '' }}"><a class="nav-link"
+        {{-- @if(auth('admin')->user()?->role('super_admin')) --}}
+
+            @if(auth('admin')->user()?->can('lihat.dashboard'))
+                <li class="{{ Route::is('admin_dashboard') ? 'active' : '' }}"><a class="nav-link"
                     href="{{ route('admin_dashboard') }}"><i class="fab fa-dashcube"></i>
-                    <span>Dashboard</span></a></li>
+                    <span>Dashboard</span></a>
+                </li>
+            @endif
 
-            <li class="{{ Route::is('admin.laporan.pemesanan') ? 'active' : '' }}"><a class="nav-link"
-                    href="{{ route('admin.laporan.pemesanan') }}"><i class="fas fa-cash-register"></i>
-                    <span>Laporan Pemesanan</span></a></li>
+            @if(auth('admin')->user()?->can('lihat.laporan'))
+                <li class="{{ Route::is('admin.laporan.pemesanan') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('admin.laporan.pemesanan') }}">
+                        <i class="fas fa-cash-register"></i> <span>Laporan Pemesanan</span>
+                    </a>
+                </li>
+            @endif
 
-            <li class="{{ Route::is('admin_setting_index') ? 'active' : '' }}"><a class="nav-link"
-                    href="{{ route('admin_setting_index') }}"><i class="fas fa-cogs"></i>
-                    <span>Pengaturan</span></a></li>
-
-            <li class="{{ Route::is('admin_slider_index') ? 'active' : '' }}"><a class="nav-link"
+            @if(auth('admin')->user()?->can('lihat.slider'))
+                <li class="{{ Route::is('admin_slider_index') ? 'active' : '' }}"><a class="nav-link"
                     href="{{ route('admin_slider_index') }}"><i class="fas fa-sliders-h"></i>
-                    <span>Slider</span></a></li>
+                    <span>Slider</span></a>
+                </li>
+            @endif
 
-            <li class="{{ Route::is('admin_amenity_index') ? 'active' : '' }}"><a class="nav-link"
+            @if(auth('admin')->user()?->can('lihat.pengaturan'))
+                <li class="{{ Route::is('admin_setting_index') ? 'active' : '' }}"><a class="nav-link"
+                        href="{{ route('admin_setting_index') }}"><i class="fas fa-cogs"></i>
+                        <span>Pengaturan</span></a></li>
+            @endif
+
+            {{-- <li class="{{ Route::is('admin_amenity_index') ? 'active' : '' }}"><a class="nav-link"
                     href="{{ route('admin_amenity_index') }}"><i class="fas fa-umbrella-beach"></i>
-                    <span>Fasilitas</span></a></li>
+                    <span>Fasilitas</span></a></li> --}}
 
             <li class="{{ Route::is('admin_review_index') ? 'active' : '' }}"><a class="nav-link"
                     href="{{ route('admin_review_index') }}"><i class="far fa-grin-beam"></i>
@@ -107,6 +121,23 @@
                     href="{{ route('sponsor_index') }}"><i class="fas fa-users-cog"></i>
                     <span>Sponsor</span></a></li>
 
+
+
+                <li class="nav-item dropdown {{ Route::is('permissions.index') || Route::is('roles.index') || Route::is('assign.role.form') ? 'active' : '' }}">
+                    <a href="#" class="nav-link has-dropdown"><i class="fas fa-user">
+                        </i><span> Semua Peran & Perizinan</span></a>
+                    <ul class="dropdown-menu">
+                        <li class="{{ Route::is('permissions.index') ? 'active' : '' }}"><a class="nav-link"
+                                href="{{ route('permissions.index') }}"><i
+                                    class="fas fa-angle-right"></i><span>Kelola Perizinan</span></a></li>
+                        <li class="{{ Route::is('roles.index') ? 'active' : '' }}"><a class="nav-link"
+                                href="{{ route('roles.index') }}"><i class="fas fa-angle-right"></i><span> Kelola Peran & Perizinan</span></a></li>
+                        <li class="{{ Route::is('assign.role.form') ? 'active' : '' }}"><a class="nav-link"
+                                href="{{ route('assign.role.form') }}"><i
+                                    class="fas fa-angle-right"></i><span>Kelola Akses</span></a></li>
+                    </ul>
+                </li>
+
             <li class="{{ Route::is('admin_home_page_item_index') ? 'active' : '' }}"><a class="nav-link"
                     href="{{ route('admin_home_page_item_index') }}"><i class="fas fa-laptop-house"></i>
                     <span>Item Halaman Utama</span></a></li>
@@ -138,6 +169,9 @@
             <li class="{{ Request::is('admin/log/activity/user') ? 'active' : '' }}"><a class="nav-link"
                     href="{{ url('admin/log/activity/user') }}"><i class="fas fa-user-secret"></i>
                     <span>Log Aktivitas Pengguna</span></a></li>
+
+            {{-- @endif --}}
+
         </ul>
     </aside>
 </div>

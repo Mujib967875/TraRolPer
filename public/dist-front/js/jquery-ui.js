@@ -1994,7 +1994,7 @@ colors = jQuery.Color.names = {
 	silver: "#c0c0c0",
 	teal: "#008080",
 	white: "#ffffff",
-	#0D80D7: "#ffff00",
+	#00aeef: "#ffff00",
 
 	// 4.2.3. "transparent" color keyword
 	transparent: [ null, null, null, 0 ],

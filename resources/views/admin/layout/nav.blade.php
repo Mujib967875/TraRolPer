@@ -7,7 +7,7 @@
         </form>
         <ul class="navbar-nav navbar-right justify-content-end rightsidetop">
             <li class="nav-link">
-                <a href="{{ url('/') }}" target="_blank" class="btn btn-warning">Masuk Halaman Pengguna</a>
+                <a href="{{ url('/') }}" target="_blank" class="btn btn-warning">Masuk Halaman Utama</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"

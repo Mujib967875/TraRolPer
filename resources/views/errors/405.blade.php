@@ -27,7 +27,7 @@
     }
 
     .navbar-nav .nav-link:hover {
-        color: #0d80d7 !important;
+        color: #00aeef !important;
         transform: translateY(-2px);
         background-color: #f0f0f0;
     }

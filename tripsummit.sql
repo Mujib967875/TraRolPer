@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 20, 2025 at 04:11 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Waktu pembuatan: 23 Apr 2025 pada 12.35
+-- Versi server: 10.4.32-MariaDB
+-- Versi PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `travel1`
+-- Database: `tripsummit`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `about_items`
+-- Struktur dari tabel `about_items`
 --
 
 CREATE TABLE `about_items` (
@@ -35,7 +35,7 @@ CREATE TABLE `about_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `about_items`
+-- Dumping data untuk tabel `about_items`
 --
 
 INSERT INTO `about_items` (`id`, `featured_status`, `created_at`, `updated_at`) VALUES
@@ -44,7 +44,7 @@ INSERT INTO `about_items` (`id`, `featured_status`, `created_at`, `updated_at`) 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `accommodations`
+-- Struktur dari tabel `accommodations`
 --
 
 CREATE TABLE `accommodations` (
@@ -59,7 +59,7 @@ CREATE TABLE `accommodations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `accommodations`
+-- Dumping data untuk tabel `accommodations`
 --
 
 INSERT INTO `accommodations` (`id`, `package_id`, `tour_id`, `photo`, `name`, `location`, `created_at`, `updated_at`) VALUES
@@ -70,7 +70,7 @@ INSERT INTO `accommodations` (`id`, `package_id`, `tour_id`, `photo`, `name`, `l
 -- --------------------------------------------------------
 
 --
--- Table structure for table `activity_log`
+-- Struktur dari tabel `activity_log`
 --
 
 CREATE TABLE `activity_log` (
@@ -89,7 +89,7 @@ CREATE TABLE `activity_log` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `activity_log`
+-- Dumping data untuk tabel `activity_log`
 --
 
 INSERT INTO `activity_log` (`id`, `log_name`, `description`, `subject_type`, `event`, `subject_id`, `causer_type`, `causer_id`, `properties`, `batch_uuid`, `created_at`, `updated_at`) VALUES
@@ -478,12 +478,50 @@ INSERT INTO `activity_log` (`id`, `log_name`, `description`, `subject_type`, `ev
 (379, 'default', 'Admin admin-1 Menambahkan Photo di Package Outing Regular A (2 Day 1 Night In The Villa)', 'App\\Models\\PackagePhoto', 'created', 13, 'App\\Models\\Admin', 1, '{\"attributes\":{\"package_id\":\"13\",\"photo\":\"package_1745156216.avif\",\"updated_at\":\"2025-04-20 13:36:56\",\"created_at\":\"2025-04-20 13:36:56\",\"id\":40},\"old\":\"Null\"}', NULL, '2025-04-20 06:36:56', '2025-04-20 06:36:56'),
 (380, 'default', 'Admin admin-1 Menambahkan Video di Package Outing Regular A (2 Day 1 Night In The Villa)', 'App\\Models\\PackageVideo', 'created', 13, 'App\\Models\\Admin', 1, '{\"attributes\":{\"package_id\":\"13\",\"video\":\"DuU-bZdtr38\",\"updated_at\":\"2025-04-20 13:39:12\",\"created_at\":\"2025-04-20 13:39:12\",\"id\":14},\"old\":\"Null\"}', NULL, '2025-04-20 06:39:12', '2025-04-20 06:39:12'),
 (381, 'default', 'Admin admin-1 Menambahkan Video di Package Outing Regular A (2 Day 1 Night In The Villa)', 'App\\Models\\PackageVideo', 'created', 13, 'App\\Models\\Admin', 1, '{\"attributes\":{\"package_id\":\"13\",\"video\":\"LXtZH04NHoQ\",\"updated_at\":\"2025-04-20 13:39:31\",\"created_at\":\"2025-04-20 13:39:31\",\"id\":15},\"old\":\"Null\"}', NULL, '2025-04-20 06:39:31', '2025-04-20 06:39:31'),
-(382, 'default', 'Admin admin-1 Menambahkan Tour untuk Package Outing Regular A (2 Day 1 Night In The Villa)', 'App\\Models\\Tour', 'created', 13, 'App\\Models\\Admin', 1, '{\"attributes\":{\"package_id\":\"13\",\"tour_start_date\":\"2025-04-29\",\"tour_end_date\":\"2025-04-30\",\"booking_end_date\":\"2025-04-27\",\"total_seat\":\"100\",\"updated_at\":\"2025-04-20 13:46:02\",\"created_at\":\"2025-04-20 13:46:02\",\"id\":13},\"old\":\"Null\"}', NULL, '2025-04-20 06:46:02', '2025-04-20 06:46:02');
+(382, 'default', 'Admin admin-1 Menambahkan Tour untuk Package Outing Regular A (2 Day 1 Night In The Villa)', 'App\\Models\\Tour', 'created', 13, 'App\\Models\\Admin', 1, '{\"attributes\":{\"package_id\":\"13\",\"tour_start_date\":\"2025-04-29\",\"tour_end_date\":\"2025-04-30\",\"booking_end_date\":\"2025-04-27\",\"total_seat\":\"100\",\"updated_at\":\"2025-04-20 13:46:02\",\"created_at\":\"2025-04-20 13:46:02\",\"id\":13},\"old\":\"Null\"}', NULL, '2025-04-20 06:46:02', '2025-04-20 06:46:02'),
+(383, 'default', 'Admin admin-1 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-21 04:27:31', '2025-04-21 04:27:31'),
+(384, 'default', 'Admin admin-1 Melakukan logout', NULL, 'logout', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-21 06:34:38', '2025-04-21 06:34:38'),
+(385, 'default', 'Admin admin-1 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-21 06:34:49', '2025-04-21 06:34:49'),
+(386, 'default', 'Admin admin-1 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-21 15:56:58', '2025-04-21 15:56:58'),
+(387, 'default', 'Admin admin-1 Melakukan logout', NULL, 'logout', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-21 16:10:54', '2025-04-21 16:10:54'),
+(388, 'default', 'Admin admin2 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 2, '[]', NULL, '2025-04-21 16:11:03', '2025-04-21 16:11:03'),
+(389, 'default', 'Admin admin2 Melakukan logout', NULL, 'logout', NULL, 'App\\Models\\Admin', 2, '[]', NULL, '2025-04-21 16:30:22', '2025-04-21 16:30:22'),
+(390, 'default', 'Admin admin-1 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-21 16:30:30', '2025-04-21 16:30:30'),
+(391, 'default', 'Admin admin-1 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-21 21:13:08', '2025-04-21 21:13:08'),
+(392, 'default', 'Admin admin-1 Melakukan logout', NULL, 'logout', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-21 21:14:59', '2025-04-21 21:14:59'),
+(393, 'default', 'Admin admin2 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 2, '[]', NULL, '2025-04-21 21:15:08', '2025-04-21 21:15:08'),
+(394, 'default', 'Admin admin-1 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-21 21:16:40', '2025-04-21 21:16:40'),
+(395, 'default', 'Admin admin-1 Melakukan logout', NULL, 'logout', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-21 21:17:31', '2025-04-21 21:17:31'),
+(396, 'default', 'Admin admin-1 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-21 21:17:37', '2025-04-21 21:17:37');
+INSERT INTO `activity_log` (`id`, `log_name`, `description`, `subject_type`, `event`, `subject_id`, `causer_type`, `causer_id`, `properties`, `batch_uuid`, `created_at`, `updated_at`) VALUES
+(397, 'default', 'Admin admin-1 Mengedit Setting.', 'App\\Models\\Setting', 'updated', 1, 'App\\Models\\Admin', 1, '{\"attributes\":{\"id\":1,\"logo\":\"logo_1745298275.png\",\"favicon\":\"favicon_1745298275.png\",\"top_bar_phone\":\"111-222-444\",\"top_bar_email\":\"tripsummit@example.com\",\"footer_address\":\"34 Antiger Lane, USA, 12937\",\"footer_phone\":\"111-222-3333\",\"footer_email\":\"tripsummit@example.com\",\"facebook\":\"#\",\"twitter\":\"#\",\"youtube\":\"#\",\"linkedin\":\"#\",\"instagram\":\"#\",\"copyright\":\"Hak Cipta \\u00a9 2025, TripSummit. Semua Hak Dilindungi Undang-Undang.\",\"banner\":\"banner_1738592301.jpg\",\"created_at\":\"2024-12-16 11:44:25\",\"updated_at\":\"2025-04-22 05:04:35\"},\"old\":{\"id\":1,\"logo\":\"logo_1738592301.png\",\"favicon\":\"favicon_1738592301.png\",\"top_bar_phone\":\"111-222-444\",\"top_bar_email\":\"tripsummit@example.com\",\"footer_address\":\"34 Antiger Lane, USA, 12937\",\"footer_phone\":\"111-222-3333\",\"footer_email\":\"tripsummit@example.com\",\"facebook\":\"#\",\"twitter\":\"#\",\"youtube\":\"#\",\"linkedin\":\"#\",\"instagram\":\"#\",\"copyright\":\"Hak Cipta \\u00a9 2025, TripSummit. Semua Hak Dilindungi Undang-Undang.\",\"banner\":\"banner_1738592301.jpg\",\"created_at\":\"2024-12-16 11:44:25\",\"updated_at\":\"2025-02-17 14:22:40\"}}', NULL, '2025-04-21 22:04:35', '2025-04-21 22:04:35'),
+(398, 'default', 'Admin admin-1 Mengedit Setting.', 'App\\Models\\Setting', 'updated', 1, 'App\\Models\\Admin', 1, '{\"attributes\":{\"id\":1,\"logo\":\"logo_1745298275.png\",\"favicon\":\"favicon_1745298275.png\",\"top_bar_phone\":\"111-222-444\",\"top_bar_email\":\"tripsummit@example.com\",\"footer_address\":\"34 Antiger Lane, USA, 12937\",\"footer_phone\":\"111-222-3333\",\"footer_email\":\"tripsummit@example.com\",\"facebook\":\"#\",\"twitter\":\"#\",\"youtube\":\"#\",\"linkedin\":\"#\",\"instagram\":\"#\",\"copyright\":\"Hak Cipta \\u00a9 2025, Pesona Indonesia. Semua Hak Dilindungi Undang-Undang.\",\"banner\":\"banner_1738592301.jpg\",\"created_at\":\"2024-12-16 11:44:25\",\"updated_at\":\"2025-04-22 05:04:45\"},\"old\":{\"id\":1,\"logo\":\"logo_1745298275.png\",\"favicon\":\"favicon_1745298275.png\",\"top_bar_phone\":\"111-222-444\",\"top_bar_email\":\"tripsummit@example.com\",\"footer_address\":\"34 Antiger Lane, USA, 12937\",\"footer_phone\":\"111-222-3333\",\"footer_email\":\"tripsummit@example.com\",\"facebook\":\"#\",\"twitter\":\"#\",\"youtube\":\"#\",\"linkedin\":\"#\",\"instagram\":\"#\",\"copyright\":\"Hak Cipta \\u00a9 2025, TripSummit. Semua Hak Dilindungi Undang-Undang.\",\"banner\":\"banner_1738592301.jpg\",\"created_at\":\"2024-12-16 11:44:25\",\"updated_at\":\"2025-04-22 05:04:35\"}}', NULL, '2025-04-21 22:04:45', '2025-04-21 22:04:45'),
+(399, 'default', 'Admin admin-1 Mengedit Setting.', 'App\\Models\\Setting', 'updated', 1, 'App\\Models\\Admin', 1, '{\"attributes\":{\"id\":1,\"logo\":\"logo_1745298275.png\",\"favicon\":\"favicon_1745298275.png\",\"top_bar_phone\":\"111-222-444\",\"top_bar_email\":\"pesonaindonesia@example.com\",\"footer_address\":\"34 Antiger Lane, USA, 12937\",\"footer_phone\":\"111-222-3333\",\"footer_email\":\"pesonaindonesia@example.com\",\"facebook\":\"#\",\"twitter\":\"#\",\"youtube\":\"#\",\"linkedin\":\"#\",\"instagram\":\"#\",\"copyright\":\"Hak Cipta \\u00a9 2025, Pesona Indonesia. Semua Hak Dilindungi Undang-Undang.\",\"banner\":\"banner_1738592301.jpg\",\"created_at\":\"2024-12-16 11:44:25\",\"updated_at\":\"2025-04-22 05:05:47\"},\"old\":{\"id\":1,\"logo\":\"logo_1745298275.png\",\"favicon\":\"favicon_1745298275.png\",\"top_bar_phone\":\"111-222-444\",\"top_bar_email\":\"tripsummit@example.com\",\"footer_address\":\"34 Antiger Lane, USA, 12937\",\"footer_phone\":\"111-222-3333\",\"footer_email\":\"tripsummit@example.com\",\"facebook\":\"#\",\"twitter\":\"#\",\"youtube\":\"#\",\"linkedin\":\"#\",\"instagram\":\"#\",\"copyright\":\"Hak Cipta \\u00a9 2025, Pesona Indonesia. Semua Hak Dilindungi Undang-Undang.\",\"banner\":\"banner_1738592301.jpg\",\"created_at\":\"2024-12-16 11:44:25\",\"updated_at\":\"2025-04-22 05:04:45\"}}', NULL, '2025-04-21 22:05:47', '2025-04-21 22:05:47'),
+(400, 'default', 'Admin admin-1 Melakukan logout', NULL, 'logout', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-21 23:08:23', '2025-04-21 23:08:23'),
+(401, 'default', 'Admin admin2 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 2, '[]', NULL, '2025-04-21 23:08:32', '2025-04-21 23:08:32'),
+(402, 'default', 'Admin admin2 Melakukan logout', NULL, 'logout', NULL, 'App\\Models\\Admin', 2, '[]', NULL, '2025-04-21 23:09:05', '2025-04-21 23:09:05'),
+(403, 'default', 'Admin admin-1 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-21 23:09:12', '2025-04-21 23:09:12'),
+(404, 'default', 'Admin admin-1 Melakukan logout', NULL, 'logout', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-21 23:11:48', '2025-04-21 23:11:48'),
+(405, 'default', 'Admin admin2 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 2, '[]', NULL, '2025-04-21 23:11:55', '2025-04-21 23:11:55'),
+(406, 'default', 'Admin admin2 Melakukan logout', NULL, 'logout', NULL, 'App\\Models\\Admin', 2, '[]', NULL, '2025-04-21 23:12:35', '2025-04-21 23:12:35'),
+(407, 'default', 'Admin admin-1 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-21 23:12:41', '2025-04-21 23:12:41'),
+(408, 'default', 'Admin admin-1 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-21 23:16:52', '2025-04-21 23:16:52'),
+(409, 'default', 'Admin admin-1 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-21 23:47:01', '2025-04-21 23:47:01'),
+(410, 'default', 'Admin Menambahkan Destination Video di ', 'App\\Models\\DestinationVideo', 'created', 15, 'App\\Models\\Admin', 1, '{\"attributes\":{\"destination_id\":\"10\",\"video\":\"AR1cSKxxSmU\",\"updated_at\":\"2025-04-22 08:01:41\",\"created_at\":\"2025-04-22 08:01:41\",\"id\":15},\"old\":\"Null\"}', NULL, '2025-04-22 01:01:41', '2025-04-22 01:01:41'),
+(411, 'default', 'User suparman Melakukan login', NULL, 'login', NULL, 'App\\Models\\User', 6, '[]', NULL, '2025-04-22 01:08:16', '2025-04-22 01:08:16'),
+(412, 'default', 'Admin admin-1 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-22 02:19:09', '2025-04-22 02:19:09'),
+(413, 'default', 'Admin admin-1 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-22 23:32:37', '2025-04-22 23:32:37'),
+(414, 'default', 'Admin admin-1 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-23 00:41:43', '2025-04-23 00:41:43'),
+(415, 'default', 'Admin admin-1 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-23 01:56:05', '2025-04-23 01:56:05'),
+(416, 'default', 'Admin admin-1 Melakukan logout', NULL, 'logout', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-23 02:44:30', '2025-04-23 02:44:30'),
+(417, 'default', 'Admin admin2 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 2, '[]', NULL, '2025-04-23 02:44:37', '2025-04-23 02:44:37'),
+(418, 'default', 'Admin admin2 Melakukan logout', NULL, 'logout', NULL, 'App\\Models\\Admin', 2, '[]', NULL, '2025-04-23 02:47:20', '2025-04-23 02:47:20'),
+(419, 'default', 'Admin admin-1 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-23 02:47:28', '2025-04-23 02:47:28');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admins`
+-- Struktur dari tabel `admins`
 --
 
 CREATE TABLE `admins` (
@@ -498,17 +536,17 @@ CREATE TABLE `admins` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `admins`
+-- Dumping data untuk tabel `admins`
 --
 
 INSERT INTO `admins` (`id`, `name`, `email`, `photo`, `password`, `token`, `created_at`, `updated_at`) VALUES
 (1, 'admin-1', 'admin@gmail.com', 'admin_1735390234.jpg', '$2y$12$baQaUb90HhTUzFvoUMJNLuu.ZIw/tWBUKFJ0o2p5dStR89DTtZLCK', '', '2024-11-20 03:13:16', '2025-03-11 01:46:32'),
-(2, 'admin2', 'admin2@gmail.com', 'admin_1737442051.jpg', '$2y$12$0lWhzpkIPlPlZZd3DAl5b.5MH/eTNtsmGZciEW49WLUAvBAY6hyyq', NULL, NULL, '2025-01-20 23:47:31');
+(2, 'admin2', 'admin2@gmail.com', 'admin_1737442051.jpg', '$2y$12$baQaUb90HhTUzFvoUMJNLuu.ZIw/tWBUKFJ0o2p5dStR89DTtZLCK', NULL, NULL, '2025-01-20 23:47:31');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `amenities`
+-- Struktur dari tabel `amenities`
 --
 
 CREATE TABLE `amenities` (
@@ -520,7 +558,7 @@ CREATE TABLE `amenities` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `amenities`
+-- Dumping data untuk tabel `amenities`
 --
 
 INSERT INTO `amenities` (`id`, `name`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -545,7 +583,7 @@ INSERT INTO `amenities` (`id`, `name`, `created_at`, `updated_at`, `deleted_at`)
 -- --------------------------------------------------------
 
 --
--- Table structure for table `blog_categories`
+-- Struktur dari tabel `blog_categories`
 --
 
 CREATE TABLE `blog_categories` (
@@ -558,7 +596,7 @@ CREATE TABLE `blog_categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `blog_categories`
+-- Dumping data untuk tabel `blog_categories`
 --
 
 INSERT INTO `blog_categories` (`id`, `name`, `slug`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -569,7 +607,7 @@ INSERT INTO `blog_categories` (`id`, `name`, `slug`, `created_at`, `updated_at`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bookings`
+-- Struktur dari tabel `bookings`
 --
 
 CREATE TABLE `bookings` (
@@ -590,7 +628,7 @@ CREATE TABLE `bookings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `bookings`
+-- Dumping data untuk tabel `bookings`
 --
 
 INSERT INTO `bookings` (`id`, `order_id`, `package_id`, `tour_id`, `user_id`, `total_person`, `paid_amount`, `payment_method`, `payment_status`, `invoice_no`, `checkout_url`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -602,7 +640,7 @@ INSERT INTO `bookings` (`id`, `order_id`, `package_id`, `tour_id`, `user_id`, `t
 -- --------------------------------------------------------
 
 --
--- Table structure for table `booking_rooms`
+-- Struktur dari tabel `booking_rooms`
 --
 
 CREATE TABLE `booking_rooms` (
@@ -618,7 +656,7 @@ CREATE TABLE `booking_rooms` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `booking_rooms`
+-- Dumping data untuk tabel `booking_rooms`
 --
 
 INSERT INTO `booking_rooms` (`id`, `room_id`, `user_id`, `tour_id`, `accommodation_id`, `check_in`, `check_out`, `created_at`, `updated_at`) VALUES
@@ -627,7 +665,7 @@ INSERT INTO `booking_rooms` (`id`, `room_id`, `user_id`, `tour_id`, `accommodati
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cache`
+-- Struktur dari tabel `cache`
 --
 
 CREATE TABLE `cache` (
@@ -636,10 +674,17 @@ CREATE TABLE `cache` (
   `expiration` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data untuk tabel `cache`
+--
+
+INSERT INTO `cache` (`key`, `value`, `expiration`) VALUES
+('spatie.permission.cache', 'a:3:{s:5:\"alias\";a:4:{s:1:\"a\";s:2:\"id\";s:1:\"b\";s:4:\"name\";s:1:\"c\";s:10:\"guard_name\";s:1:\"r\";s:5:\"roles\";}s:11:\"permissions\";a:126:{i:0;a:4:{s:1:\"a\";i:7;s:1:\"b\";s:15:\"lihat.dashboard\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:10;}}i:1;a:4:{s:1:\"a\";i:8;s:1:\"b\";s:13:\"lihat.laporan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:10;}}i:2;a:4:{s:1:\"a\";i:9;s:1:\"b\";s:17:\"simpanpdf.laporan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:3;a:4:{s:1:\"a\";i:10;s:1:\"b\";s:19:\"simpanexcel.laporan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:4;a:4:{s:1:\"a\";i:11;s:1:\"b\";s:12:\"lihat.slider\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:5;a:4:{s:1:\"a\";i:12;s:1:\"b\";s:13:\"tambah.slider\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:6;a:4:{s:1:\"a\";i:13;s:1:\"b\";s:11:\"edit.slider\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:7;a:4:{s:1:\"a\";i:14;s:1:\"b\";s:12:\"hapus.slider\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:8;a:4:{s:1:\"a\";i:15;s:1:\"b\";s:13:\"sampah.slider\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:9;a:4:{s:1:\"a\";i:16;s:1:\"b\";s:16:\"lihat.pengaturan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:10;a:4:{s:1:\"a\";i:17;s:1:\"b\";s:15:\"edit.pengaturan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:11;a:4:{s:1:\"a\";i:19;s:1:\"b\";s:22:\"tambah.fasilitas.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:12;a:4:{s:1:\"a\";i:21;s:1:\"b\";s:21:\"hapus.fasilitas.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:13;a:4:{s:1:\"a\";i:22;s:1:\"b\";s:22:\"sampah.fasilitas.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:14;a:4:{s:1:\"a\";i:23;s:1:\"b\";s:12:\"lihat.ulasan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:15;a:4:{s:1:\"a\";i:24;s:1:\"b\";s:12:\"hapus.ulasan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:16;a:4:{s:1:\"a\";i:25;s:1:\"b\";s:13:\"sampah.ulasan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:17;a:4:{s:1:\"a\";i:26;s:1:\"b\";s:11:\"lihat.fitur\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:18;a:4:{s:1:\"a\";i:27;s:1:\"b\";s:12:\"tambah.fitur\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:19;a:4:{s:1:\"a\";i:28;s:1:\"b\";s:10:\"edit.fitur\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:20;a:4:{s:1:\"a\";i:29;s:1:\"b\";s:11:\"hapus.fitur\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:21;a:4:{s:1:\"a\";i:30;s:1:\"b\";s:12:\"sampah.fitur\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:22;a:4:{s:1:\"a\";i:31;s:1:\"b\";s:15:\"lihat.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:23;a:4:{s:1:\"a\";i:32;s:1:\"b\";s:16:\"tambah.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:24;a:4:{s:1:\"a\";i:33;s:1:\"b\";s:14:\"edit.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:25;a:4:{s:1:\"a\";i:34;s:1:\"b\";s:15:\"hapus.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:26;a:4:{s:1:\"a\";i:35;s:1:\"b\";s:16:\"sampah.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:27;a:4:{s:1:\"a\";i:36;s:1:\"b\";s:26:\"lihat.galeryFoto.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:28;a:4:{s:1:\"a\";i:37;s:1:\"b\";s:27:\"tambah.galeryFoto.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:29;a:4:{s:1:\"a\";i:38;s:1:\"b\";s:26:\"hapus.galeryFoto.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:30;a:4:{s:1:\"a\";i:39;s:1:\"b\";s:27:\"sampah.galeryFoto.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:31;a:4:{s:1:\"a\";i:40;s:1:\"b\";s:27:\"lihat.galeryVideo.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:32;a:4:{s:1:\"a\";i:41;s:1:\"b\";s:28:\"tambah.galeryVideo.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:33;a:4:{s:1:\"a\";i:42;s:1:\"b\";s:27:\"hapus.galeryVideo.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:34;a:4:{s:1:\"a\";i:43;s:1:\"b\";s:28:\"sampah.galeryVideo.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:35;a:4:{s:1:\"a\";i:44;s:1:\"b\";s:18:\"lihat.blogKategori\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:36;a:4:{s:1:\"a\";i:45;s:1:\"b\";s:19:\"tambah.blogKategori\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:37;a:4:{s:1:\"a\";i:46;s:1:\"b\";s:17:\"edit.blogKategori\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:38;a:4:{s:1:\"a\";i:47;s:1:\"b\";s:18:\"hapus.blogKategori\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:39;a:4:{s:1:\"a\";i:48;s:1:\"b\";s:19:\"sampah.blogKategori\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:40;a:4:{s:1:\"a\";i:49;s:1:\"b\";s:14:\"lihat.blogPost\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:41;a:4:{s:1:\"a\";i:50;s:1:\"b\";s:15:\"tambah.blogPost\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:42;a:4:{s:1:\"a\";i:51;s:1:\"b\";s:13:\"edit.blogPost\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:43;a:4:{s:1:\"a\";i:52;s:1:\"b\";s:14:\"hapus.blogPost\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:44;a:4:{s:1:\"a\";i:53;s:1:\"b\";s:15:\"sampah.blogPost\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:45;a:4:{s:1:\"a\";i:54;s:1:\"b\";s:17:\"lihat.commentBlog\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:46;a:4:{s:1:\"a\";i:55;s:1:\"b\";s:17:\"hapus.commentBlog\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:47;a:4:{s:1:\"a\";i:56;s:1:\"b\";s:11:\"lihat.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:48;a:4:{s:1:\"a\";i:57;s:1:\"b\";s:12:\"tambah.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:49;a:4:{s:1:\"a\";i:58;s:1:\"b\";s:10:\"edit.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:50;a:4:{s:1:\"a\";i:59;s:1:\"b\";s:11:\"hapus.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:51;a:4:{s:1:\"a\";i:60;s:1:\"b\";s:21:\"lihat.fasilitas.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:52;a:4:{s:1:\"a\";i:61;s:1:\"b\";s:22:\"lihat.galery.fasilitas\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:53;a:4:{s:1:\"a\";i:62;s:1:\"b\";s:23:\"tambah.galery.fasilitas\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:54;a:4:{s:1:\"a\";i:63;s:1:\"b\";s:22:\"hapus.galery.fasilitas\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:55;a:4:{s:1:\"a\";i:64;s:1:\"b\";s:14:\"tambah.rencana\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:56;a:4:{s:1:\"a\";i:65;s:1:\"b\";s:13:\"hapus.rencana\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:57;a:4:{s:1:\"a\";i:66;s:1:\"b\";s:14:\"sampah.rencana\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:58;a:4:{s:1:\"a\";i:67;s:1:\"b\";s:13:\"lihat.rencana\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:59;a:4:{s:1:\"a\";i:68;s:1:\"b\";s:22:\"lihat.pertanyaan.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:60;a:4:{s:1:\"a\";i:69;s:1:\"b\";s:23:\"tambah.pertanyaan.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:61;a:4:{s:1:\"a\";i:70;s:1:\"b\";s:22:\"hapus.pertanyaan.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:62;a:4:{s:1:\"a\";i:71;s:1:\"b\";s:23:\"sampah.pertanyaan.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:63;a:4:{s:1:\"a\";i:72;s:1:\"b\";s:22:\"lihat.galeryFoto.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:64;a:4:{s:1:\"a\";i:73;s:1:\"b\";s:23:\"tambah.galeryFoto.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:65;a:4:{s:1:\"a\";i:74;s:1:\"b\";s:22:\"hapus.galeryFoto.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:66;a:4:{s:1:\"a\";i:75;s:1:\"b\";s:23:\"sampah.galeryFoto.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:67;a:4:{s:1:\"a\";i:76;s:1:\"b\";s:23:\"lihat.galeryVideo.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:68;a:4:{s:1:\"a\";i:77;s:1:\"b\";s:24:\"tambah.galeryVideo.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:69;a:4:{s:1:\"a\";i:78;s:1:\"b\";s:23:\"hapus.galeryVideo.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:70;a:4:{s:1:\"a\";i:79;s:1:\"b\";s:24:\"sampah.galeryVideo.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:71;a:4:{s:1:\"a\";i:80;s:1:\"b\";s:9:\"lihat.tur\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:72;a:4:{s:1:\"a\";i:81;s:1:\"b\";s:10:\"tambah.tur\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:73;a:4:{s:1:\"a\";i:82;s:1:\"b\";s:8:\"edit.tur\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:74;a:4:{s:1:\"a\";i:83;s:1:\"b\";s:9:\"hapus.tur\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:75;a:4:{s:1:\"a\";i:84;s:1:\"b\";s:10:\"sampah.tur\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:76;a:4:{s:1:\"a\";i:85;s:1:\"b\";s:19:\"lihat.infoPemesanan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:77;a:4:{s:1:\"a\";i:86;s:1:\"b\";s:19:\"hapus.infoPemesanan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:78;a:4:{s:1:\"a\";i:87;s:1:\"b\";s:20:\"sampah.infoPemesanan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:79;a:4:{s:1:\"a\";i:88;s:1:\"b\";s:22:\"whatsapp.infoPemesanan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:80;a:4:{s:1:\"a\";i:89;s:1:\"b\";s:24:\"infofaktur.infoPemesanan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:81;a:4:{s:1:\"a\";i:90;s:1:\"b\";s:14:\"lihat.pengikut\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:82;a:4:{s:1:\"a\";i:91;s:1:\"b\";s:19:\"kirimEmail.pengikut\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:83;a:4:{s:1:\"a\";i:92;s:1:\"b\";s:14:\"hapus.pengikut\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:84;a:4:{s:1:\"a\";i:93;s:1:\"b\";s:15:\"sampah.pengikut\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:85;a:4:{s:1:\"a\";i:94;s:1:\"b\";s:14:\"lihat.pengguna\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:86;a:4:{s:1:\"a\";i:95;s:1:\"b\";s:15:\"tambah.pengguna\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:87;a:4:{s:1:\"a\";i:96;s:1:\"b\";s:13:\"edit.pengguna\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:88;a:4:{s:1:\"a\";i:97;s:1:\"b\";s:14:\"hapus.pengguna\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:89;a:4:{s:1:\"a\";i:98;s:1:\"b\";s:15:\"sampah.pengguna\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:90;a:4:{s:1:\"a\";i:99;s:1:\"b\";s:22:\"lihat.message.pengguna\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:91;a:4:{s:1:\"a\";i:100;s:1:\"b\";s:22:\"buka.message.penggguna\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:92;a:4:{s:1:\"a\";i:101;s:1:\"b\";s:15:\"lihat.testimoni\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:93;a:4:{s:1:\"a\";i:102;s:1:\"b\";s:16:\"tambah.testimoni\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:94;a:4:{s:1:\"a\";i:103;s:1:\"b\";s:14:\"edit.testimoni\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:95;a:4:{s:1:\"a\";i:104;s:1:\"b\";s:15:\"hapus.testimoni\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:96;a:4:{s:1:\"a\";i:105;s:1:\"b\";s:16:\"sampah.testimoni\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:97;a:4:{s:1:\"a\";i:106;s:1:\"b\";s:16:\"lihat.pertanyaan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:98;a:4:{s:1:\"a\";i:107;s:1:\"b\";s:17:\"tambah.pertanyaan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:99;a:4:{s:1:\"a\";i:108;s:1:\"b\";s:15:\"edit.pertanyaan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:100;a:4:{s:1:\"a\";i:109;s:1:\"b\";s:16:\"hapus.pertanyaan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:101;a:4:{s:1:\"a\";i:110;s:1:\"b\";s:17:\"sampah.pertanyaan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:102;a:4:{s:1:\"a\";i:111;s:1:\"b\";s:13:\"lihat.anggota\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:103;a:4:{s:1:\"a\";i:112;s:1:\"b\";s:14:\"tambah.anggota\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:104;a:4:{s:1:\"a\";i:113;s:1:\"b\";s:12:\"edit.anggota\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:105;a:4:{s:1:\"a\";i:114;s:1:\"b\";s:13:\"hapus.anggota\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:106;a:4:{s:1:\"a\";i:115;s:1:\"b\";s:14:\"sampah.anggota\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:107;a:4:{s:1:\"a\";i:116;s:1:\"b\";s:13:\"lihat.sponsor\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:108;a:4:{s:1:\"a\";i:117;s:1:\"b\";s:14:\"tambah.sponsor\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:109;a:4:{s:1:\"a\";i:118;s:1:\"b\";s:13:\"hapus.sponsor\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:110;a:4:{s:1:\"a\";i:119;s:1:\"b\";s:14:\"sampah.sponsor\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:111;a:4:{s:1:\"a\";i:120;s:1:\"b\";s:9:\"Perizinan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:112;a:4:{s:1:\"a\";i:121;s:1:\"b\";s:13:\"lihat.beranda\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:113;a:4:{s:1:\"a\";i:122;s:1:\"b\";s:12:\"edit.beranda\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:114;a:4:{s:1:\"a\";i:123;s:1:\"b\";s:13:\"lihat.tentang\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:115;a:4:{s:1:\"a\";i:124;s:1:\"b\";s:12:\"edit.tentang\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:116;a:4:{s:1:\"a\";i:125;s:1:\"b\";s:12:\"lihat.kontak\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:117;a:4:{s:1:\"a\";i:126;s:1:\"b\";s:11:\"edit.kontak\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:118;a:4:{s:1:\"a\";i:127;s:1:\"b\";s:13:\"lihat.welcome\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:119;a:4:{s:1:\"a\";i:128;s:1:\"b\";s:12:\"edit.welcome\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:120;a:4:{s:1:\"a\";i:129;s:1:\"b\";s:13:\"lihat.counter\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:121;a:4:{s:1:\"a\";i:130;s:1:\"b\";s:12:\"edit.counter\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:122;a:4:{s:1:\"a\";i:131;s:1:\"b\";s:20:\"lihat.privacy.policy\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:123;a:4:{s:1:\"a\";i:132;s:1:\"b\";s:19:\"edit.privacy.policy\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:124;a:4:{s:1:\"a\";i:133;s:1:\"b\";s:24:\"lihat.logAktivitas.admin\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:125;a:4:{s:1:\"a\";i:134;s:1:\"b\";s:23:\"lihat.logAktivitas.user\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}}s:5:\"roles\";a:2:{i:0;a:3:{s:1:\"a\";i:9;s:1:\"b\";s:11:\"super_admin\";s:1:\"c\";s:5:\"admin\";}i:1;a:3:{s:1:\"a\";i:10;s:1:\"b\";s:5:\"admin\";s:1:\"c\";s:5:\"admin\";}}}', 1745490869);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cache_locks`
+-- Struktur dari tabel `cache_locks`
 --
 
 CREATE TABLE `cache_locks` (
@@ -651,7 +696,7 @@ CREATE TABLE `cache_locks` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `comments`
+-- Struktur dari tabel `comments`
 --
 
 CREATE TABLE `comments` (
@@ -666,7 +711,7 @@ CREATE TABLE `comments` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `comments`
+-- Dumping data untuk tabel `comments`
 --
 
 INSERT INTO `comments` (`id`, `post_id`, `parent_id`, `name`, `comment`, `created_at`, `updated_at`, `status`) VALUES
@@ -701,7 +746,7 @@ INSERT INTO `comments` (`id`, `post_id`, `parent_id`, `name`, `comment`, `create
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contact_items`
+-- Struktur dari tabel `contact_items`
 --
 
 CREATE TABLE `contact_items` (
@@ -712,7 +757,7 @@ CREATE TABLE `contact_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `contact_items`
+-- Dumping data untuk tabel `contact_items`
 --
 
 INSERT INTO `contact_items` (`id`, `map_code`, `created_at`, `updated_at`) VALUES
@@ -721,7 +766,7 @@ INSERT INTO `contact_items` (`id`, `map_code`, `created_at`, `updated_at`) VALUE
 -- --------------------------------------------------------
 
 --
--- Table structure for table `counter_items`
+-- Struktur dari tabel `counter_items`
 --
 
 CREATE TABLE `counter_items` (
@@ -740,7 +785,7 @@ CREATE TABLE `counter_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `counter_items`
+-- Dumping data untuk tabel `counter_items`
 --
 
 INSERT INTO `counter_items` (`id`, `item1_number`, `item1_text`, `item2_number`, `item2_text`, `item3_number`, `item3_text`, `item4_number`, `item4_text`, `status`, `created_at`, `updated_at`) VALUES
@@ -749,7 +794,7 @@ INSERT INTO `counter_items` (`id`, `item1_number`, `item1_text`, `item2_number`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `destinations`
+-- Struktur dari tabel `destinations`
 --
 
 CREATE TABLE `destinations` (
@@ -778,7 +823,7 @@ CREATE TABLE `destinations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `destinations`
+-- Dumping data untuk tabel `destinations`
 --
 
 INSERT INTO `destinations` (`id`, `name`, `slug`, `description`, `country`, `language`, `currency`, `area`, `timezone`, `best_time`, `health_safety`, `visa_requirement`, `activity`, `map`, `featured_photo`, `country_code`, `package_count`, `is_visible_on_map`, `view_count`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -792,7 +837,7 @@ INSERT INTO `destinations` (`id`, `name`, `slug`, `description`, `country`, `lan
 -- --------------------------------------------------------
 
 --
--- Table structure for table `destination_photos`
+-- Struktur dari tabel `destination_photos`
 --
 
 CREATE TABLE `destination_photos` (
@@ -805,7 +850,7 @@ CREATE TABLE `destination_photos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `destination_photos`
+-- Dumping data untuk tabel `destination_photos`
 --
 
 INSERT INTO `destination_photos` (`id`, `destination_id`, `photo`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -819,7 +864,7 @@ INSERT INTO `destination_photos` (`id`, `destination_id`, `photo`, `created_at`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `destination_videos`
+-- Struktur dari tabel `destination_videos`
 --
 
 CREATE TABLE `destination_videos` (
@@ -832,7 +877,7 @@ CREATE TABLE `destination_videos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `destination_videos`
+-- Dumping data untuk tabel `destination_videos`
 --
 
 INSERT INTO `destination_videos` (`id`, `destination_id`, `video`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -843,12 +888,13 @@ INSERT INTO `destination_videos` (`id`, `destination_id`, `video`, `created_at`,
 (11, 11, 'eeMz5Q0aWTc&t', '2025-04-18 23:46:10', '2025-04-18 23:46:13', '2025-04-18 23:46:13'),
 (12, 11, '395s', '2025-04-18 23:46:19', '2025-04-18 23:46:26', '2025-04-18 23:46:26'),
 (13, 11, 'yWdtfpZsfj8', '2025-04-18 23:46:40', '2025-04-18 23:46:40', NULL),
-(14, 11, 'LJ9_uJ62C0w', '2025-04-18 23:46:55', '2025-04-18 23:46:55', NULL);
+(14, 11, 'LJ9_uJ62C0w', '2025-04-18 23:46:55', '2025-04-18 23:46:55', NULL),
+(15, 10, 'AR1cSKxxSmU', '2025-04-22 01:01:41', '2025-04-22 01:01:41', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `failed_jobs`
+-- Struktur dari tabel `failed_jobs`
 --
 
 CREATE TABLE `failed_jobs` (
@@ -864,7 +910,7 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `faqs`
+-- Struktur dari tabel `faqs`
 --
 
 CREATE TABLE `faqs` (
@@ -877,7 +923,7 @@ CREATE TABLE `faqs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `faqs`
+-- Dumping data untuk tabel `faqs`
 --
 
 INSERT INTO `faqs` (`id`, `question`, `answer`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -889,7 +935,7 @@ INSERT INTO `faqs` (`id`, `question`, `answer`, `created_at`, `updated_at`, `del
 -- --------------------------------------------------------
 
 --
--- Table structure for table `features`
+-- Struktur dari tabel `features`
 --
 
 CREATE TABLE `features` (
@@ -903,7 +949,7 @@ CREATE TABLE `features` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `features`
+-- Dumping data untuk tabel `features`
 --
 
 INSERT INTO `features` (`id`, `icon`, `heading`, `description`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -914,7 +960,7 @@ INSERT INTO `features` (`id`, `icon`, `heading`, `description`, `created_at`, `u
 -- --------------------------------------------------------
 
 --
--- Table structure for table `home_items`
+-- Struktur dari tabel `home_items`
 --
 
 CREATE TABLE `home_items` (
@@ -940,7 +986,7 @@ CREATE TABLE `home_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `home_items`
+-- Dumping data untuk tabel `home_items`
 --
 
 INSERT INTO `home_items` (`id`, `destination_heading`, `destination_subheading`, `destination_status`, `featured_status`, `package_heading`, `package_subheading`, `package_status`, `testimonial_heading`, `testimonial_subheading`, `testimonial_background`, `testimonial_status`, `blog_heading`, `blog_subheading`, `blog_status`, `sponsor_heading`, `sponsor_status`, `created_at`, `updated_at`) VALUES
@@ -949,7 +995,7 @@ INSERT INTO `home_items` (`id`, `destination_heading`, `destination_subheading`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jobs`
+-- Struktur dari tabel `jobs`
 --
 
 CREATE TABLE `jobs` (
@@ -965,7 +1011,7 @@ CREATE TABLE `jobs` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `job_batches`
+-- Struktur dari tabel `job_batches`
 --
 
 CREATE TABLE `job_batches` (
@@ -984,7 +1030,7 @@ CREATE TABLE `job_batches` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `messages`
+-- Struktur dari tabel `messages`
 --
 
 CREATE TABLE `messages` (
@@ -995,7 +1041,7 @@ CREATE TABLE `messages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `messages`
+-- Dumping data untuk tabel `messages`
 --
 
 INSERT INTO `messages` (`id`, `user_id`, `created_at`, `updated_at`) VALUES
@@ -1005,7 +1051,7 @@ INSERT INTO `messages` (`id`, `user_id`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `message_comments`
+-- Struktur dari tabel `message_comments`
 --
 
 CREATE TABLE `message_comments` (
@@ -1019,7 +1065,7 @@ CREATE TABLE `message_comments` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `message_comments`
+-- Dumping data untuk tabel `message_comments`
 --
 
 INSERT INTO `message_comments` (`id`, `message_id`, `sender_id`, `type`, `comment`, `created_at`, `updated_at`) VALUES
@@ -1051,7 +1097,7 @@ INSERT INTO `message_comments` (`id`, `message_id`, `sender_id`, `type`, `commen
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- Struktur dari tabel `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -1061,7 +1107,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `migrations`
+-- Dumping data untuk tabel `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -1140,12 +1186,45 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (77, '2025_04_16_055322_create_rooms_table', 60),
 (79, '2025_04_17_043039_create_accommodation_tour_table', 61),
 (80, '2025_04_16_055359_create_booking_rooms_table', 62),
-(81, '2025_04_18_085618_create_package_amenity_photos_table', 63);
+(81, '2025_04_18_085618_create_package_amenity_photos_table', 63),
+(82, '2025_04_21_113728_create_permission_tables', 64);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orders`
+-- Struktur dari tabel `model_has_permissions`
+--
+
+CREATE TABLE `model_has_permissions` (
+  `permission_id` bigint(20) UNSIGNED NOT NULL,
+  `model_type` varchar(255) NOT NULL,
+  `model_id` bigint(20) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `model_has_roles`
+--
+
+CREATE TABLE `model_has_roles` (
+  `role_id` bigint(20) UNSIGNED NOT NULL,
+  `model_type` varchar(255) NOT NULL,
+  `model_id` bigint(20) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `model_has_roles`
+--
+
+INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
+(9, 'App\\Models\\Admin', 1),
+(10, 'App\\Models\\Admin', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `orders`
 --
 
 CREATE TABLE `orders` (
@@ -1161,7 +1240,7 @@ CREATE TABLE `orders` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `packages`
+-- Struktur dari tabel `packages`
 --
 
 CREATE TABLE `packages` (
@@ -1186,7 +1265,7 @@ CREATE TABLE `packages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `packages`
+-- Dumping data untuk tabel `packages`
 --
 
 INSERT INTO `packages` (`id`, `destination_id`, `name`, `slug`, `description`, `featured_photo`, `banner`, `map`, `price`, `old_price`, `total_rating`, `total_score`, `min_person`, `max_person`, `include_hostel`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -1202,7 +1281,7 @@ INSERT INTO `packages` (`id`, `destination_id`, `name`, `slug`, `description`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `package_amenities`
+-- Struktur dari tabel `package_amenities`
 --
 
 CREATE TABLE `package_amenities` (
@@ -1216,7 +1295,7 @@ CREATE TABLE `package_amenities` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `package_amenities`
+-- Dumping data untuk tabel `package_amenities`
 --
 
 INSERT INTO `package_amenities` (`id`, `package_id`, `amenities_name`, `type`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -1269,7 +1348,7 @@ INSERT INTO `package_amenities` (`id`, `package_id`, `amenities_name`, `type`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `package_amenity_photos`
+-- Struktur dari tabel `package_amenity_photos`
 --
 
 CREATE TABLE `package_amenity_photos` (
@@ -1282,7 +1361,7 @@ CREATE TABLE `package_amenity_photos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `package_amenity_photos`
+-- Dumping data untuk tabel `package_amenity_photos`
 --
 
 INSERT INTO `package_amenity_photos` (`id`, `package_id`, `package_amenity_id`, `photo`, `created_at`, `updated_at`) VALUES
@@ -1385,7 +1464,7 @@ INSERT INTO `package_amenity_photos` (`id`, `package_id`, `package_amenity_id`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `package_faqs`
+-- Struktur dari tabel `package_faqs`
 --
 
 CREATE TABLE `package_faqs` (
@@ -1399,7 +1478,7 @@ CREATE TABLE `package_faqs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `package_faqs`
+-- Dumping data untuk tabel `package_faqs`
 --
 
 INSERT INTO `package_faqs` (`id`, `package_id`, `question`, `answer`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -1411,7 +1490,7 @@ INSERT INTO `package_faqs` (`id`, `package_id`, `question`, `answer`, `created_a
 -- --------------------------------------------------------
 
 --
--- Table structure for table `package_itineraries`
+-- Struktur dari tabel `package_itineraries`
 --
 
 CREATE TABLE `package_itineraries` (
@@ -1425,7 +1504,7 @@ CREATE TABLE `package_itineraries` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `package_itineraries`
+-- Dumping data untuk tabel `package_itineraries`
 --
 
 INSERT INTO `package_itineraries` (`id`, `package_id`, `name`, `description`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -1442,7 +1521,7 @@ INSERT INTO `package_itineraries` (`id`, `package_id`, `name`, `description`, `c
 -- --------------------------------------------------------
 
 --
--- Table structure for table `package_photos`
+-- Struktur dari tabel `package_photos`
 --
 
 CREATE TABLE `package_photos` (
@@ -1455,7 +1534,7 @@ CREATE TABLE `package_photos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `package_photos`
+-- Dumping data untuk tabel `package_photos`
 --
 
 INSERT INTO `package_photos` (`id`, `package_id`, `photo`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -1490,7 +1569,7 @@ INSERT INTO `package_photos` (`id`, `package_id`, `photo`, `created_at`, `update
 -- --------------------------------------------------------
 
 --
--- Table structure for table `package_videos`
+-- Struktur dari tabel `package_videos`
 --
 
 CREATE TABLE `package_videos` (
@@ -1503,7 +1582,7 @@ CREATE TABLE `package_videos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `package_videos`
+-- Dumping data untuk tabel `package_videos`
 --
 
 INSERT INTO `package_videos` (`id`, `package_id`, `video`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -1519,7 +1598,7 @@ INSERT INTO `package_videos` (`id`, `package_id`, `video`, `created_at`, `update
 -- --------------------------------------------------------
 
 --
--- Table structure for table `password_reset_tokens`
+-- Struktur dari tabel `password_reset_tokens`
 --
 
 CREATE TABLE `password_reset_tokens` (
@@ -1531,7 +1610,153 @@ CREATE TABLE `password_reset_tokens` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `personal_access_tokens`
+-- Struktur dari tabel `permissions`
+--
+
+CREATE TABLE `permissions` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `guard_name` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `permissions`
+--
+
+INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
+(7, 'lihat.dashboard', 'admin', '2025-04-23 00:42:45', '2025-04-23 02:02:19'),
+(8, 'lihat.laporan', 'admin', '2025-04-23 00:43:26', '2025-04-23 00:43:26'),
+(9, 'simpanpdf.laporan', 'admin', '2025-04-23 00:43:44', '2025-04-23 00:43:44'),
+(10, 'simpanexcel.laporan', 'admin', '2025-04-23 00:44:26', '2025-04-23 00:44:26'),
+(11, 'lihat.slider', 'admin', '2025-04-23 00:44:40', '2025-04-23 00:44:40'),
+(12, 'tambah.slider', 'admin', '2025-04-23 00:44:52', '2025-04-23 01:09:38'),
+(13, 'edit.slider', 'admin', '2025-04-23 00:45:05', '2025-04-23 00:45:05'),
+(14, 'hapus.slider', 'admin', '2025-04-23 00:45:18', '2025-04-23 00:45:18'),
+(15, 'sampah.slider', 'admin', '2025-04-23 00:45:34', '2025-04-23 00:45:34'),
+(16, 'lihat.pengaturan', 'admin', '2025-04-23 00:45:49', '2025-04-23 00:45:49'),
+(17, 'edit.pengaturan', 'admin', '2025-04-23 00:46:03', '2025-04-23 00:46:03'),
+(19, 'tambah.fasilitas.paket', 'admin', '2025-04-23 00:46:40', '2025-04-23 02:49:53'),
+(21, 'hapus.fasilitas.paket', 'admin', '2025-04-23 00:47:28', '2025-04-23 02:50:06'),
+(22, 'sampah.fasilitas.paket', 'admin', '2025-04-23 00:47:45', '2025-04-23 02:50:14'),
+(23, 'lihat.ulasan', 'admin', '2025-04-23 00:48:31', '2025-04-23 00:48:31'),
+(24, 'hapus.ulasan', 'admin', '2025-04-23 00:48:47', '2025-04-23 00:48:47'),
+(25, 'sampah.ulasan', 'admin', '2025-04-23 00:49:03', '2025-04-23 00:49:03'),
+(26, 'lihat.fitur', 'admin', '2025-04-23 00:49:48', '2025-04-23 00:49:48'),
+(27, 'tambah.fitur', 'admin', '2025-04-23 00:50:06', '2025-04-23 01:10:24'),
+(28, 'edit.fitur', 'admin', '2025-04-23 00:50:21', '2025-04-23 00:50:21'),
+(29, 'hapus.fitur', 'admin', '2025-04-23 00:50:41', '2025-04-23 00:50:41'),
+(30, 'sampah.fitur', 'admin', '2025-04-23 00:50:58', '2025-04-23 00:50:58'),
+(31, 'lihat.destinasi', 'admin', '2025-04-23 01:08:16', '2025-04-23 02:54:15'),
+(32, 'tambah.destinasi', 'admin', '2025-04-23 01:08:38', '2025-04-23 02:54:32'),
+(33, 'edit.destinasi', 'admin', '2025-04-23 01:14:28', '2025-04-23 02:54:49'),
+(34, 'hapus.destinasi', 'admin', '2025-04-23 01:14:43', '2025-04-23 02:56:05'),
+(35, 'sampah.destinasi', 'admin', '2025-04-23 01:15:01', '2025-04-23 02:56:21'),
+(36, 'lihat.galeryFoto.destinasi', 'admin', '2025-04-23 01:15:18', '2025-04-23 02:56:35'),
+(37, 'tambah.galeryFoto.destinasi', 'admin', '2025-04-23 01:15:34', '2025-04-23 02:57:15'),
+(38, 'hapus.galeryFoto.destinasi', 'admin', '2025-04-23 01:16:02', '2025-04-23 02:57:34'),
+(39, 'sampah.galeryFoto.destinasi', 'admin', '2025-04-23 01:16:18', '2025-04-23 02:57:50'),
+(40, 'lihat.galeryVideo.destinasi', 'admin', '2025-04-23 01:16:34', '2025-04-23 02:58:04'),
+(41, 'tambah.galeryVideo.destinasi', 'admin', '2025-04-23 01:16:48', '2025-04-23 02:58:19'),
+(42, 'hapus.galeryVideo.destinasi', 'admin', '2025-04-23 01:17:04', '2025-04-23 02:58:32'),
+(43, 'sampah.galeryVideo.destinasi', 'admin', '2025-04-23 01:17:18', '2025-04-23 02:58:47'),
+(44, 'lihat.blogKategori', 'admin', '2025-04-23 01:18:12', '2025-04-23 03:34:26'),
+(45, 'tambah.blogKategori', 'admin', '2025-04-23 01:18:27', '2025-04-23 03:34:28'),
+(46, 'edit.blogKategori', 'admin', '2025-04-23 01:18:40', '2025-04-23 03:34:10'),
+(47, 'hapus.blogKategori', 'admin', '2025-04-23 01:18:55', '2025-04-23 03:34:03'),
+(48, 'sampah.blogKategori', 'admin', '2025-04-23 01:19:13', '2025-04-23 03:33:58'),
+(49, 'lihat.blogPost', 'admin', '2025-04-23 01:19:28', '2025-04-23 03:33:51'),
+(50, 'tambah.blogPost', 'admin', '2025-04-23 01:19:43', '2025-04-23 03:33:45'),
+(51, 'edit.blogPost', 'admin', '2025-04-23 01:19:58', '2025-04-23 03:33:39'),
+(52, 'hapus.blogPost', 'admin', '2025-04-23 01:20:17', '2025-04-23 03:33:32'),
+(53, 'sampah.blogPost', 'admin', '2025-04-23 01:20:31', '2025-04-23 03:33:27'),
+(54, 'lihat.commentBlog', 'admin', '2025-04-23 01:20:45', '2025-04-23 03:20:59'),
+(55, 'hapus.commentBlog', 'admin', '2025-04-23 01:21:03', '2025-04-23 03:21:16'),
+(56, 'lihat.paket', 'admin', '2025-04-23 01:23:03', '2025-04-23 02:59:39'),
+(57, 'tambah.paket', 'admin', '2025-04-23 01:23:15', '2025-04-23 02:59:59'),
+(58, 'edit.paket', 'admin', '2025-04-23 01:23:30', '2025-04-23 03:00:14'),
+(59, 'hapus.paket', 'admin', '2025-04-23 01:23:46', '2025-04-23 03:01:17'),
+(60, 'lihat.fasilitas.paket', 'admin', '2025-04-23 01:24:03', '2025-04-23 02:50:24'),
+(61, 'lihat.galery.fasilitas', 'admin', '2025-04-23 01:31:40', '2025-04-23 01:31:40'),
+(62, 'tambah.galery.fasilitas', 'admin', '2025-04-23 01:31:53', '2025-04-23 01:31:53'),
+(63, 'hapus.galery.fasilitas', 'admin', '2025-04-23 01:32:05', '2025-04-23 01:32:05'),
+(64, 'tambah.rencana', 'admin', '2025-04-23 01:32:17', '2025-04-23 01:32:17'),
+(65, 'hapus.rencana', 'admin', '2025-04-23 01:32:30', '2025-04-23 01:32:30'),
+(66, 'sampah.rencana', 'admin', '2025-04-23 01:32:43', '2025-04-23 01:32:43'),
+(67, 'lihat.rencana', 'admin', '2025-04-23 01:32:56', '2025-04-23 01:32:56'),
+(68, 'lihat.pertanyaan.paket', 'admin', '2025-04-23 01:33:10', '2025-04-23 01:33:10'),
+(69, 'tambah.pertanyaan.paket', 'admin', '2025-04-23 01:33:20', '2025-04-23 01:33:20'),
+(70, 'hapus.pertanyaan.paket', 'admin', '2025-04-23 01:33:29', '2025-04-23 01:33:29'),
+(71, 'sampah.pertanyaan.paket', 'admin', '2025-04-23 01:33:40', '2025-04-23 01:33:40'),
+(72, 'lihat.galeryFoto.paket', 'admin', '2025-04-23 01:33:52', '2025-04-23 01:33:52'),
+(73, 'tambah.galeryFoto.paket', 'admin', '2025-04-23 01:34:03', '2025-04-23 01:34:03'),
+(74, 'hapus.galeryFoto.paket', 'admin', '2025-04-23 01:34:13', '2025-04-23 01:34:13'),
+(75, 'sampah.galeryFoto.paket', 'admin', '2025-04-23 01:34:23', '2025-04-23 01:34:23'),
+(76, 'lihat.galeryVideo.paket', 'admin', '2025-04-23 01:34:35', '2025-04-23 01:34:35'),
+(77, 'tambah.galeryVideo.paket', 'admin', '2025-04-23 01:34:48', '2025-04-23 01:34:48'),
+(78, 'hapus.galeryVideo.paket', 'admin', '2025-04-23 01:35:00', '2025-04-23 01:35:00'),
+(79, 'sampah.galeryVideo.paket', 'admin', '2025-04-23 01:35:14', '2025-04-23 01:35:14'),
+(80, 'lihat.tur', 'admin', '2025-04-23 01:43:25', '2025-04-23 01:43:25'),
+(81, 'tambah.tur', 'admin', '2025-04-23 01:43:39', '2025-04-23 01:43:39'),
+(82, 'edit.tur', 'admin', '2025-04-23 01:43:48', '2025-04-23 01:43:48'),
+(83, 'hapus.tur', 'admin', '2025-04-23 01:43:56', '2025-04-23 01:43:56'),
+(84, 'sampah.tur', 'admin', '2025-04-23 01:44:08', '2025-04-23 01:44:08'),
+(85, 'lihat.infoPemesanan', 'admin', '2025-04-23 01:44:18', '2025-04-23 03:02:36'),
+(86, 'hapus.infoPemesanan', 'admin', '2025-04-23 01:44:30', '2025-04-23 03:03:34'),
+(87, 'sampah.infoPemesanan', 'admin', '2025-04-23 01:44:45', '2025-04-23 03:04:34'),
+(88, 'whatsapp.infoPemesanan', 'admin', '2025-04-23 01:45:18', '2025-04-23 03:05:53'),
+(89, 'infofaktur.infoPemesanan', 'admin', '2025-04-23 01:45:27', '2025-04-23 03:06:01'),
+(90, 'lihat.pengikut', 'admin', '2025-04-23 01:46:25', '2025-04-23 01:46:25'),
+(91, 'kirimEmail.pengikut', 'admin', '2025-04-23 01:46:34', '2025-04-23 01:46:34'),
+(92, 'hapus.pengikut', 'admin', '2025-04-23 01:46:51', '2025-04-23 01:46:51'),
+(93, 'sampah.pengikut', 'admin', '2025-04-23 01:47:01', '2025-04-23 01:47:01'),
+(94, 'lihat.pengguna', 'admin', '2025-04-23 01:47:21', '2025-04-23 01:47:21'),
+(95, 'tambah.pengguna', 'admin', '2025-04-23 01:47:31', '2025-04-23 01:47:31'),
+(96, 'edit.pengguna', 'admin', '2025-04-23 01:47:40', '2025-04-23 01:47:40'),
+(97, 'hapus.pengguna', 'admin', '2025-04-23 01:47:49', '2025-04-23 01:47:49'),
+(98, 'sampah.pengguna', 'admin', '2025-04-23 01:47:58', '2025-04-23 01:47:58'),
+(99, 'lihat.message.pengguna', 'admin', '2025-04-23 01:48:11', '2025-04-23 01:48:11'),
+(100, 'buka.message.penggguna', 'admin', '2025-04-23 01:48:23', '2025-04-23 01:48:23'),
+(101, 'lihat.testimoni', 'admin', '2025-04-23 01:48:46', '2025-04-23 03:10:56'),
+(102, 'tambah.testimoni', 'admin', '2025-04-23 01:49:43', '2025-04-23 03:11:03'),
+(103, 'edit.testimoni', 'admin', '2025-04-23 01:49:52', '2025-04-23 03:11:09'),
+(104, 'hapus.testimoni', 'admin', '2025-04-23 01:50:01', '2025-04-23 03:15:07'),
+(105, 'sampah.testimoni', 'admin', '2025-04-23 01:50:10', '2025-04-23 03:11:19'),
+(106, 'lihat.pertanyaan', 'admin', '2025-04-23 01:50:52', '2025-04-23 03:21:53'),
+(107, 'tambah.pertanyaan', 'admin', '2025-04-23 01:51:00', '2025-04-23 03:22:09'),
+(108, 'edit.pertanyaan', 'admin', '2025-04-23 01:51:16', '2025-04-23 03:22:25'),
+(109, 'hapus.pertanyaan', 'admin', '2025-04-23 01:51:25', '2025-04-23 03:22:40'),
+(110, 'sampah.pertanyaan', 'admin', '2025-04-23 01:51:37', '2025-04-23 03:22:56'),
+(111, 'lihat.anggota', 'admin', '2025-04-23 01:51:56', '2025-04-23 03:14:39'),
+(112, 'tambah.anggota', 'admin', '2025-04-23 01:52:05', '2025-04-23 03:14:36'),
+(113, 'edit.anggota', 'admin', '2025-04-23 01:52:15', '2025-04-23 03:14:34'),
+(114, 'hapus.anggota', 'admin', '2025-04-23 01:52:27', '2025-04-23 03:14:32'),
+(115, 'sampah.anggota', 'admin', '2025-04-23 01:52:37', '2025-04-23 03:14:29'),
+(116, 'lihat.sponsor', 'admin', '2025-04-23 01:53:07', '2025-04-23 03:18:10'),
+(117, 'tambah.sponsor', 'admin', '2025-04-23 01:53:17', '2025-04-23 03:18:12'),
+(118, 'hapus.sponsor', 'admin', '2025-04-23 01:53:27', '2025-04-23 03:18:08'),
+(119, 'sampah.sponsor', 'admin', '2025-04-23 01:53:36', '2025-04-23 03:18:06'),
+(120, 'Perizinan', 'admin', '2025-04-23 01:54:09', '2025-04-23 01:54:09'),
+(121, 'lihat.beranda', 'admin', '2025-04-23 01:54:20', '2025-04-23 01:54:20'),
+(122, 'edit.beranda', 'admin', '2025-04-23 01:54:30', '2025-04-23 01:54:30'),
+(123, 'lihat.tentang', 'admin', '2025-04-23 01:54:39', '2025-04-23 01:54:39'),
+(124, 'edit.tentang', 'admin', '2025-04-23 01:54:51', '2025-04-23 01:54:51'),
+(125, 'lihat.kontak', 'admin', '2025-04-23 01:54:59', '2025-04-23 01:54:59'),
+(126, 'edit.kontak', 'admin', '2025-04-23 01:55:09', '2025-04-23 01:55:09'),
+(127, 'lihat.welcome', 'admin', '2025-04-23 01:55:38', '2025-04-23 03:19:29'),
+(128, 'edit.welcome', 'admin', '2025-04-23 01:55:48', '2025-04-23 03:19:44'),
+(129, 'lihat.counter', 'admin', '2025-04-23 01:55:59', '2025-04-23 03:30:18'),
+(130, 'edit.counter', 'admin', '2025-04-23 01:56:07', '2025-04-23 03:30:44'),
+(131, 'lihat.privacy.policy', 'admin', '2025-04-23 01:56:36', '2025-04-23 03:29:18'),
+(132, 'edit.privacy.policy', 'admin', '2025-04-23 01:56:45', '2025-04-23 03:29:46'),
+(133, 'lihat.logAktivitas.admin', 'admin', '2025-04-23 01:57:30', '2025-04-23 03:27:58'),
+(134, 'lihat.logAktivitas.user', 'admin', '2025-04-23 01:57:46', '2025-04-23 03:27:44');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `personal_access_tokens`
 --
 
 CREATE TABLE `personal_access_tokens` (
@@ -1550,7 +1775,7 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `posts`
+-- Struktur dari tabel `posts`
 --
 
 CREATE TABLE `posts` (
@@ -1567,7 +1792,7 @@ CREATE TABLE `posts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `posts`
+-- Dumping data untuk tabel `posts`
 --
 
 INSERT INTO `posts` (`id`, `blog_category_id`, `title`, `slug`, `short_description`, `description`, `photo`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -1578,7 +1803,7 @@ INSERT INTO `posts` (`id`, `blog_category_id`, `title`, `slug`, `short_descripti
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reviews`
+-- Struktur dari tabel `reviews`
 --
 
 CREATE TABLE `reviews` (
@@ -1593,7 +1818,7 @@ CREATE TABLE `reviews` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `reviews`
+-- Dumping data untuk tabel `reviews`
 --
 
 INSERT INTO `reviews` (`id`, `user_id`, `package_id`, `rating`, `comment`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -1602,7 +1827,174 @@ INSERT INTO `reviews` (`id`, `user_id`, `package_id`, `rating`, `comment`, `crea
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rooms`
+-- Struktur dari tabel `roles`
+--
+
+CREATE TABLE `roles` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `guard_name` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `roles`
+--
+
+INSERT INTO `roles` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
+(9, 'super_admin', 'admin', '2025-04-23 02:09:35', '2025-04-23 02:09:35'),
+(10, 'admin', 'admin', '2025-04-23 02:39:39', '2025-04-23 02:39:39');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `role_has_permissions`
+--
+
+CREATE TABLE `role_has_permissions` (
+  `permission_id` bigint(20) UNSIGNED NOT NULL,
+  `role_id` bigint(20) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `role_has_permissions`
+--
+
+INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
+(7, 9),
+(7, 10),
+(8, 9),
+(8, 10),
+(9, 9),
+(10, 9),
+(11, 9),
+(12, 9),
+(13, 9),
+(14, 9),
+(15, 9),
+(16, 9),
+(17, 9),
+(19, 9),
+(21, 9),
+(22, 9),
+(23, 9),
+(24, 9),
+(25, 9),
+(26, 9),
+(27, 9),
+(28, 9),
+(29, 9),
+(30, 9),
+(31, 9),
+(32, 9),
+(33, 9),
+(34, 9),
+(35, 9),
+(36, 9),
+(37, 9),
+(38, 9),
+(39, 9),
+(40, 9),
+(41, 9),
+(42, 9),
+(43, 9),
+(44, 9),
+(45, 9),
+(46, 9),
+(47, 9),
+(48, 9),
+(49, 9),
+(50, 9),
+(51, 9),
+(52, 9),
+(53, 9),
+(54, 9),
+(55, 9),
+(56, 9),
+(57, 9),
+(58, 9),
+(59, 9),
+(60, 9),
+(61, 9),
+(62, 9),
+(63, 9),
+(64, 9),
+(65, 9),
+(66, 9),
+(67, 9),
+(68, 9),
+(69, 9),
+(70, 9),
+(71, 9),
+(72, 9),
+(73, 9),
+(74, 9),
+(75, 9),
+(76, 9),
+(77, 9),
+(78, 9),
+(79, 9),
+(80, 9),
+(81, 9),
+(82, 9),
+(83, 9),
+(84, 9),
+(85, 9),
+(86, 9),
+(87, 9),
+(88, 9),
+(89, 9),
+(90, 9),
+(91, 9),
+(92, 9),
+(93, 9),
+(94, 9),
+(95, 9),
+(96, 9),
+(97, 9),
+(98, 9),
+(99, 9),
+(100, 9),
+(101, 9),
+(102, 9),
+(103, 9),
+(104, 9),
+(105, 9),
+(106, 9),
+(107, 9),
+(108, 9),
+(109, 9),
+(110, 9),
+(111, 9),
+(112, 9),
+(113, 9),
+(114, 9),
+(115, 9),
+(116, 9),
+(117, 9),
+(118, 9),
+(119, 9),
+(120, 9),
+(121, 9),
+(122, 9),
+(123, 9),
+(124, 9),
+(125, 9),
+(126, 9),
+(127, 9),
+(128, 9),
+(129, 9),
+(130, 9),
+(131, 9),
+(132, 9),
+(133, 9),
+(134, 9);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `rooms`
 --
 
 CREATE TABLE `rooms` (
@@ -1616,7 +2008,7 @@ CREATE TABLE `rooms` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `rooms`
+-- Dumping data untuk tabel `rooms`
 --
 
 INSERT INTO `rooms` (`id`, `accommodation_id`, `name`, `capacity`, `room_price`, `created_at`, `updated_at`) VALUES
@@ -1627,7 +2019,7 @@ INSERT INTO `rooms` (`id`, `accommodation_id`, `name`, `capacity`, `room_price`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sessions`
+-- Struktur dari tabel `sessions`
 --
 
 CREATE TABLE `sessions` (
@@ -1640,16 +2032,17 @@ CREATE TABLE `sessions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `sessions`
+-- Dumping data untuk tabel `sessions`
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('W0ZkJ6DJZj9JBPgd5xF8wrOqto47Ob75VYh4nfy3', 6, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiZmhNWFRuekd5ZGxienNna0pwN09ab3d4enhlSnExUkpoZllrMzVHNiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NzM6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wYWNrYWdlL291dGluZy1yZWd1bGFyLUEtMi1kYXktMS1uaWdodC1pbi10aGUtdmlsbGEiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUyOiJsb2dpbl9hZG1pbl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxNDoidXJsX3NlYmVsdW1ueWEiO3M6Mjc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9sb2dpbiI7czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6Njt9', 1745157848);
+('L3Dt9xpcvP0wQmhaKqey7nAoP40saghqkB4RKxWy', NULL, '192.168.1.9', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiRjZ5Mlp6MzZndGgwZlE0SzRyY2VYSjVSTWFlUndrRVNXT1p3bGVjMCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDM6Imh0dHA6Ly8xOTIuMTY4LjEuNDo4MDAwL2FkbWluL3JvbGVzLzEwL2VkaXQiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUyOiJsb2dpbl9hZG1pbl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==', 1745404482),
+('vZSnsf29on61buwAJFGMaZ0ByCx4e2ei3Yz8esMK', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiVTVwOWQwUU9wbUNSSWNIZGMzS2QwRDFYZ2pGTlU1bnJWeTRzdXo1eiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9yb2xlcy9jcmVhdGUiO31zOjUyOiJsb2dpbl9hZG1pbl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==', 1745403799);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `settings`
+-- Struktur dari tabel `settings`
 --
 
 CREATE TABLE `settings` (
@@ -1673,16 +2066,16 @@ CREATE TABLE `settings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `settings`
+-- Dumping data untuk tabel `settings`
 --
 
 INSERT INTO `settings` (`id`, `logo`, `favicon`, `top_bar_phone`, `top_bar_email`, `footer_address`, `footer_phone`, `footer_email`, `facebook`, `twitter`, `youtube`, `linkedin`, `instagram`, `copyright`, `banner`, `created_at`, `updated_at`) VALUES
-(1, 'logo_1738592301.png', 'favicon_1738592301.png', '111-222-444', 'tripsummit@example.com', '34 Antiger Lane, USA, 12937', '111-222-3333', 'tripsummit@example.com', '#', '#', '#', '#', '#', 'Hak Cipta © 2025, TripSummit. Semua Hak Dilindungi Undang-Undang.', 'banner_1738592301.jpg', '2024-12-16 04:44:25', '2025-02-17 07:22:40');
+(1, 'logo_1745298275.png', 'favicon_1745298275.png', '111-222-444', 'pesonaindonesia@example.com', '34 Antiger Lane, USA, 12937', '111-222-3333', 'pesonaindonesia@example.com', '#', '#', '#', '#', '#', 'Hak Cipta © 2025, Pesona Indonesia. Semua Hak Dilindungi Undang-Undang.', 'banner_1738592301.jpg', '2024-12-16 04:44:25', '2025-04-21 22:05:47');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sliders`
+-- Struktur dari tabel `sliders`
 --
 
 CREATE TABLE `sliders` (
@@ -1698,7 +2091,7 @@ CREATE TABLE `sliders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `sliders`
+-- Dumping data untuk tabel `sliders`
 --
 
 INSERT INTO `sliders` (`id`, `heading`, `text`, `button_text`, `button_link`, `photo`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -1709,7 +2102,7 @@ INSERT INTO `sliders` (`id`, `heading`, `text`, `button_text`, `button_link`, `p
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sponsors`
+-- Struktur dari tabel `sponsors`
 --
 
 CREATE TABLE `sponsors` (
@@ -1721,7 +2114,7 @@ CREATE TABLE `sponsors` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `sponsors`
+-- Dumping data untuk tabel `sponsors`
 --
 
 INSERT INTO `sponsors` (`id`, `photo`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -1739,7 +2132,7 @@ INSERT INTO `sponsors` (`id`, `photo`, `created_at`, `updated_at`, `deleted_at`)
 -- --------------------------------------------------------
 
 --
--- Table structure for table `subscribers`
+-- Struktur dari tabel `subscribers`
 --
 
 CREATE TABLE `subscribers` (
@@ -1753,7 +2146,7 @@ CREATE TABLE `subscribers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `subscribers`
+-- Dumping data untuk tabel `subscribers`
 --
 
 INSERT INTO `subscribers` (`id`, `email`, `token`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -1764,7 +2157,7 @@ INSERT INTO `subscribers` (`id`, `email`, `token`, `status`, `created_at`, `upda
 -- --------------------------------------------------------
 
 --
--- Table structure for table `team_members`
+-- Struktur dari tabel `team_members`
 --
 
 CREATE TABLE `team_members` (
@@ -1787,7 +2180,7 @@ CREATE TABLE `team_members` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `team_members`
+-- Dumping data untuk tabel `team_members`
 --
 
 INSERT INTO `team_members` (`id`, `name`, `slug`, `designation`, `address`, `email`, `phone`, `biography`, `photo`, `facebook`, `twitter`, `linkedin`, `instagram`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -1799,7 +2192,7 @@ INSERT INTO `team_members` (`id`, `name`, `slug`, `designation`, `address`, `ema
 -- --------------------------------------------------------
 
 --
--- Table structure for table `term_privacy_items`
+-- Struktur dari tabel `term_privacy_items`
 --
 
 CREATE TABLE `term_privacy_items` (
@@ -1811,7 +2204,7 @@ CREATE TABLE `term_privacy_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `term_privacy_items`
+-- Dumping data untuk tabel `term_privacy_items`
 --
 
 INSERT INTO `term_privacy_items` (`id`, `terms`, `privacy`, `created_at`, `updated_at`) VALUES
@@ -1820,7 +2213,7 @@ INSERT INTO `term_privacy_items` (`id`, `terms`, `privacy`, `created_at`, `updat
 -- --------------------------------------------------------
 
 --
--- Table structure for table `testimonials`
+-- Struktur dari tabel `testimonials`
 --
 
 CREATE TABLE `testimonials` (
@@ -1835,7 +2228,7 @@ CREATE TABLE `testimonials` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `testimonials`
+-- Dumping data untuk tabel `testimonials`
 --
 
 INSERT INTO `testimonials` (`id`, `name`, `designation`, `comment`, `photo`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -1846,7 +2239,7 @@ INSERT INTO `testimonials` (`id`, `name`, `designation`, `comment`, `photo`, `cr
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tours`
+-- Struktur dari tabel `tours`
 --
 
 CREATE TABLE `tours` (
@@ -1862,7 +2255,7 @@ CREATE TABLE `tours` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `tours`
+-- Dumping data untuk tabel `tours`
 --
 
 INSERT INTO `tours` (`id`, `package_id`, `total_seat`, `tour_start_date`, `tour_end_date`, `booking_end_date`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -1876,7 +2269,7 @@ INSERT INTO `tours` (`id`, `package_id`, `total_seat`, `tour_start_date`, `tour_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -1899,7 +2292,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `photo`, `password`, `phone`, `country`, `address`, `state`, `city`, `zip`, `token`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -1911,7 +2304,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `photo`, `password`, `phone`, `count
 -- --------------------------------------------------------
 
 --
--- Table structure for table `welcome_items`
+-- Struktur dari tabel `welcome_items`
 --
 
 CREATE TABLE `welcome_items` (
@@ -1928,7 +2321,7 @@ CREATE TABLE `welcome_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `welcome_items`
+-- Dumping data untuk tabel `welcome_items`
 --
 
 INSERT INTO `welcome_items` (`id`, `heading`, `description`, `button_text`, `button_link`, `photo`, `video`, `status`, `created_at`, `updated_at`) VALUES
@@ -1937,7 +2330,7 @@ INSERT INTO `welcome_items` (`id`, `heading`, `description`, `button_text`, `but
 -- --------------------------------------------------------
 
 --
--- Table structure for table `wishlists`
+-- Struktur dari tabel `wishlists`
 --
 
 CREATE TABLE `wishlists` (
@@ -1949,7 +2342,7 @@ CREATE TABLE `wishlists` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `wishlists`
+-- Dumping data untuk tabel `wishlists`
 --
 
 INSERT INTO `wishlists` (`id`, `user_id`, `package_id`, `created_at`, `updated_at`) VALUES
@@ -1960,19 +2353,19 @@ INSERT INTO `wishlists` (`id`, `user_id`, `package_id`, `created_at`, `updated_a
 --
 
 --
--- Indexes for table `about_items`
+-- Indeks untuk tabel `about_items`
 --
 ALTER TABLE `about_items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `accommodations`
+-- Indeks untuk tabel `accommodations`
 --
 ALTER TABLE `accommodations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `activity_log`
+-- Indeks untuk tabel `activity_log`
 --
 ALTER TABLE `activity_log`
   ADD PRIMARY KEY (`id`),
@@ -1981,32 +2374,32 @@ ALTER TABLE `activity_log`
   ADD KEY `activity_log_log_name_index` (`log_name`);
 
 --
--- Indexes for table `admins`
+-- Indeks untuk tabel `admins`
 --
 ALTER TABLE `admins`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `admins_email_unique` (`email`);
 
 --
--- Indexes for table `amenities`
+-- Indeks untuk tabel `amenities`
 --
 ALTER TABLE `amenities`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `blog_categories`
+-- Indeks untuk tabel `blog_categories`
 --
 ALTER TABLE `blog_categories`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `bookings`
+-- Indeks untuk tabel `bookings`
 --
 ALTER TABLE `bookings`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `booking_rooms`
+-- Indeks untuk tabel `booking_rooms`
 --
 ALTER TABLE `booking_rooms`
   ADD PRIMARY KEY (`id`),
@@ -2016,167 +2409,188 @@ ALTER TABLE `booking_rooms`
   ADD KEY `booking_rooms_accommodation_id_foreign` (`accommodation_id`);
 
 --
--- Indexes for table `cache`
+-- Indeks untuk tabel `cache`
 --
 ALTER TABLE `cache`
   ADD PRIMARY KEY (`key`);
 
 --
--- Indexes for table `cache_locks`
+-- Indeks untuk tabel `cache_locks`
 --
 ALTER TABLE `cache_locks`
   ADD PRIMARY KEY (`key`);
 
 --
--- Indexes for table `comments`
+-- Indeks untuk tabel `comments`
 --
 ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`),
   ADD KEY `comments_post_id_foreign` (`post_id`);
 
 --
--- Indexes for table `contact_items`
+-- Indeks untuk tabel `contact_items`
 --
 ALTER TABLE `contact_items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `counter_items`
+-- Indeks untuk tabel `counter_items`
 --
 ALTER TABLE `counter_items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `destinations`
+-- Indeks untuk tabel `destinations`
 --
 ALTER TABLE `destinations`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `country_code` (`country_code`);
 
 --
--- Indexes for table `destination_photos`
+-- Indeks untuk tabel `destination_photos`
 --
 ALTER TABLE `destination_photos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `destination_videos`
+-- Indeks untuk tabel `destination_videos`
 --
 ALTER TABLE `destination_videos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `failed_jobs`
+-- Indeks untuk tabel `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
--- Indexes for table `faqs`
+-- Indeks untuk tabel `faqs`
 --
 ALTER TABLE `faqs`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `features`
+-- Indeks untuk tabel `features`
 --
 ALTER TABLE `features`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `home_items`
+-- Indeks untuk tabel `home_items`
 --
 ALTER TABLE `home_items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `jobs`
+-- Indeks untuk tabel `jobs`
 --
 ALTER TABLE `jobs`
   ADD PRIMARY KEY (`id`),
   ADD KEY `jobs_queue_index` (`queue`);
 
 --
--- Indexes for table `job_batches`
+-- Indeks untuk tabel `job_batches`
 --
 ALTER TABLE `job_batches`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `messages`
+-- Indeks untuk tabel `messages`
 --
 ALTER TABLE `messages`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `message_comments`
+-- Indeks untuk tabel `message_comments`
 --
 ALTER TABLE `message_comments`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `migrations`
+-- Indeks untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `orders`
+-- Indeks untuk tabel `model_has_permissions`
+--
+ALTER TABLE `model_has_permissions`
+  ADD PRIMARY KEY (`permission_id`,`model_id`,`model_type`),
+  ADD KEY `model_has_permissions_model_id_model_type_index` (`model_id`,`model_type`);
+
+--
+-- Indeks untuk tabel `model_has_roles`
+--
+ALTER TABLE `model_has_roles`
+  ADD PRIMARY KEY (`role_id`,`model_id`,`model_type`),
+  ADD KEY `model_has_roles_model_id_model_type_index` (`model_id`,`model_type`);
+
+--
+-- Indeks untuk tabel `orders`
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `packages`
+-- Indeks untuk tabel `packages`
 --
 ALTER TABLE `packages`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `package_amenities`
+-- Indeks untuk tabel `package_amenities`
 --
 ALTER TABLE `package_amenities`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `package_amenity_photos`
+-- Indeks untuk tabel `package_amenity_photos`
 --
 ALTER TABLE `package_amenity_photos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `package_faqs`
+-- Indeks untuk tabel `package_faqs`
 --
 ALTER TABLE `package_faqs`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `package_itineraries`
+-- Indeks untuk tabel `package_itineraries`
 --
 ALTER TABLE `package_itineraries`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `package_photos`
+-- Indeks untuk tabel `package_photos`
 --
 ALTER TABLE `package_photos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `package_videos`
+-- Indeks untuk tabel `package_videos`
 --
 ALTER TABLE `package_videos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `password_reset_tokens`
+-- Indeks untuk tabel `password_reset_tokens`
 --
 ALTER TABLE `password_reset_tokens`
   ADD PRIMARY KEY (`email`);
 
 --
--- Indexes for table `personal_access_tokens`
+-- Indeks untuk tabel `permissions`
+--
+ALTER TABLE `permissions`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `permissions_name_guard_name_unique` (`name`,`guard_name`);
+
+--
+-- Indeks untuk tabel `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   ADD PRIMARY KEY (`id`),
@@ -2184,26 +2598,40 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
--- Indexes for table `posts`
+-- Indeks untuk tabel `posts`
 --
 ALTER TABLE `posts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `reviews`
+-- Indeks untuk tabel `reviews`
 --
 ALTER TABLE `reviews`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `rooms`
+-- Indeks untuk tabel `roles`
+--
+ALTER TABLE `roles`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `roles_name_guard_name_unique` (`name`,`guard_name`);
+
+--
+-- Indeks untuk tabel `role_has_permissions`
+--
+ALTER TABLE `role_has_permissions`
+  ADD PRIMARY KEY (`permission_id`,`role_id`),
+  ADD KEY `role_has_permissions_role_id_foreign` (`role_id`);
+
+--
+-- Indeks untuk tabel `rooms`
 --
 ALTER TABLE `rooms`
   ADD PRIMARY KEY (`id`),
   ADD KEY `rooms_accommodation_id_foreign` (`accommodation_id`);
 
 --
--- Indexes for table `sessions`
+-- Indeks untuk tabel `sessions`
 --
 ALTER TABLE `sessions`
   ADD PRIMARY KEY (`id`),
@@ -2211,352 +2639,364 @@ ALTER TABLE `sessions`
   ADD KEY `sessions_last_activity_index` (`last_activity`);
 
 --
--- Indexes for table `settings`
+-- Indeks untuk tabel `settings`
 --
 ALTER TABLE `settings`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `sliders`
+-- Indeks untuk tabel `sliders`
 --
 ALTER TABLE `sliders`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `sponsors`
+-- Indeks untuk tabel `sponsors`
 --
 ALTER TABLE `sponsors`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `subscribers`
+-- Indeks untuk tabel `subscribers`
 --
 ALTER TABLE `subscribers`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `team_members`
+-- Indeks untuk tabel `team_members`
 --
 ALTER TABLE `team_members`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `term_privacy_items`
+-- Indeks untuk tabel `term_privacy_items`
 --
 ALTER TABLE `term_privacy_items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `testimonials`
+-- Indeks untuk tabel `testimonials`
 --
 ALTER TABLE `testimonials`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tours`
+-- Indeks untuk tabel `tours`
 --
 ALTER TABLE `tours`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- Indexes for table `welcome_items`
+-- Indeks untuk tabel `welcome_items`
 --
 ALTER TABLE `welcome_items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `wishlists`
+-- Indeks untuk tabel `wishlists`
 --
 ALTER TABLE `wishlists`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `about_items`
+-- AUTO_INCREMENT untuk tabel `about_items`
 --
 ALTER TABLE `about_items`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `accommodations`
+-- AUTO_INCREMENT untuk tabel `accommodations`
 --
 ALTER TABLE `accommodations`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `activity_log`
+-- AUTO_INCREMENT untuk tabel `activity_log`
 --
 ALTER TABLE `activity_log`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=383;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=420;
 
 --
--- AUTO_INCREMENT for table `admins`
+-- AUTO_INCREMENT untuk tabel `admins`
 --
 ALTER TABLE `admins`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `amenities`
+-- AUTO_INCREMENT untuk tabel `amenities`
 --
 ALTER TABLE `amenities`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
--- AUTO_INCREMENT for table `blog_categories`
+-- AUTO_INCREMENT untuk tabel `blog_categories`
 --
 ALTER TABLE `blog_categories`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `bookings`
+-- AUTO_INCREMENT untuk tabel `bookings`
 --
 ALTER TABLE `bookings`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `booking_rooms`
+-- AUTO_INCREMENT untuk tabel `booking_rooms`
 --
 ALTER TABLE `booking_rooms`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `comments`
+-- AUTO_INCREMENT untuk tabel `comments`
 --
 ALTER TABLE `comments`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
--- AUTO_INCREMENT for table `contact_items`
+-- AUTO_INCREMENT untuk tabel `contact_items`
 --
 ALTER TABLE `contact_items`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `counter_items`
+-- AUTO_INCREMENT untuk tabel `counter_items`
 --
 ALTER TABLE `counter_items`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `destinations`
+-- AUTO_INCREMENT untuk tabel `destinations`
 --
 ALTER TABLE `destinations`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `destination_photos`
+-- AUTO_INCREMENT untuk tabel `destination_photos`
 --
 ALTER TABLE `destination_photos`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
--- AUTO_INCREMENT for table `destination_videos`
+-- AUTO_INCREMENT untuk tabel `destination_videos`
 --
 ALTER TABLE `destination_videos`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT for table `failed_jobs`
+-- AUTO_INCREMENT untuk tabel `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `faqs`
+-- AUTO_INCREMENT untuk tabel `faqs`
 --
 ALTER TABLE `faqs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `features`
+-- AUTO_INCREMENT untuk tabel `features`
 --
 ALTER TABLE `features`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `home_items`
+-- AUTO_INCREMENT untuk tabel `home_items`
 --
 ALTER TABLE `home_items`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `jobs`
+-- AUTO_INCREMENT untuk tabel `jobs`
 --
 ALTER TABLE `jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `messages`
+-- AUTO_INCREMENT untuk tabel `messages`
 --
 ALTER TABLE `messages`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `message_comments`
+-- AUTO_INCREMENT untuk tabel `message_comments`
 --
 ALTER TABLE `message_comments`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- AUTO_INCREMENT for table `migrations`
+-- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
--- AUTO_INCREMENT for table `orders`
+-- AUTO_INCREMENT untuk tabel `orders`
 --
 ALTER TABLE `orders`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `packages`
+-- AUTO_INCREMENT untuk tabel `packages`
 --
 ALTER TABLE `packages`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `package_amenities`
+-- AUTO_INCREMENT untuk tabel `package_amenities`
 --
 ALTER TABLE `package_amenities`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
--- AUTO_INCREMENT for table `package_amenity_photos`
+-- AUTO_INCREMENT untuk tabel `package_amenity_photos`
 --
 ALTER TABLE `package_amenity_photos`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
 
 --
--- AUTO_INCREMENT for table `package_faqs`
+-- AUTO_INCREMENT untuk tabel `package_faqs`
 --
 ALTER TABLE `package_faqs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT for table `package_itineraries`
+-- AUTO_INCREMENT untuk tabel `package_itineraries`
 --
 ALTER TABLE `package_itineraries`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT for table `package_photos`
+-- AUTO_INCREMENT untuk tabel `package_photos`
 --
 ALTER TABLE `package_photos`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
--- AUTO_INCREMENT for table `package_videos`
+-- AUTO_INCREMENT untuk tabel `package_videos`
 --
 ALTER TABLE `package_videos`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT for table `personal_access_tokens`
+-- AUTO_INCREMENT untuk tabel `permissions`
+--
+ALTER TABLE `permissions`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
+
+--
+-- AUTO_INCREMENT untuk tabel `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `posts`
+-- AUTO_INCREMENT untuk tabel `posts`
 --
 ALTER TABLE `posts`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `reviews`
+-- AUTO_INCREMENT untuk tabel `reviews`
 --
 ALTER TABLE `reviews`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `rooms`
+-- AUTO_INCREMENT untuk tabel `roles`
+--
+ALTER TABLE `roles`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT untuk tabel `rooms`
 --
 ALTER TABLE `rooms`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `settings`
+-- AUTO_INCREMENT untuk tabel `settings`
 --
 ALTER TABLE `settings`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `sliders`
+-- AUTO_INCREMENT untuk tabel `sliders`
 --
 ALTER TABLE `sliders`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `sponsors`
+-- AUTO_INCREMENT untuk tabel `sponsors`
 --
 ALTER TABLE `sponsors`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `subscribers`
+-- AUTO_INCREMENT untuk tabel `subscribers`
 --
 ALTER TABLE `subscribers`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `team_members`
+-- AUTO_INCREMENT untuk tabel `team_members`
 --
 ALTER TABLE `team_members`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `term_privacy_items`
+-- AUTO_INCREMENT untuk tabel `term_privacy_items`
 --
 ALTER TABLE `term_privacy_items`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `testimonials`
+-- AUTO_INCREMENT untuk tabel `testimonials`
 --
 ALTER TABLE `testimonials`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `tours`
+-- AUTO_INCREMENT untuk tabel `tours`
 --
 ALTER TABLE `tours`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT for table `welcome_items`
+-- AUTO_INCREMENT untuk tabel `welcome_items`
 --
 ALTER TABLE `welcome_items`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `wishlists`
+-- AUTO_INCREMENT untuk tabel `wishlists`
 --
 ALTER TABLE `wishlists`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `booking_rooms`
+-- Ketidakleluasaan untuk tabel `booking_rooms`
 --
 ALTER TABLE `booking_rooms`
   ADD CONSTRAINT `booking_rooms_accommodation_id_foreign` FOREIGN KEY (`accommodation_id`) REFERENCES `accommodations` (`id`) ON DELETE CASCADE,
@@ -2565,13 +3005,32 @@ ALTER TABLE `booking_rooms`
   ADD CONSTRAINT `booking_rooms_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `comments`
+-- Ketidakleluasaan untuk tabel `comments`
 --
 ALTER TABLE `comments`
   ADD CONSTRAINT `comments_post_id_foreign` FOREIGN KEY (`post_id`) REFERENCES `posts` (`id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `rooms`
+-- Ketidakleluasaan untuk tabel `model_has_permissions`
+--
+ALTER TABLE `model_has_permissions`
+  ADD CONSTRAINT `model_has_permissions_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE;
+
+--
+-- Ketidakleluasaan untuk tabel `model_has_roles`
+--
+ALTER TABLE `model_has_roles`
+  ADD CONSTRAINT `model_has_roles_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
+
+--
+-- Ketidakleluasaan untuk tabel `role_has_permissions`
+--
+ALTER TABLE `role_has_permissions`
+  ADD CONSTRAINT `role_has_permissions_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `role_has_permissions_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
+
+--
+-- Ketidakleluasaan untuk tabel `rooms`
 --
 ALTER TABLE `rooms`
   ADD CONSTRAINT `rooms_accommodation_id_foreign` FOREIGN KEY (`accommodation_id`) REFERENCES `accommodations` (`id`) ON DELETE CASCADE;

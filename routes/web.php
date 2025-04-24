@@ -136,6 +136,9 @@ Route::middleware('auth')
         Route::post('/message-submit', [UserController::class, 'message_submit'])->name('user_message_submit');
     });
 
+
+
+
 // Admin
 Route::middleware(['admin:admin'])
     ->prefix('admin')
@@ -156,9 +159,13 @@ Route::middleware(['admin:admin'])
 
         // Sliders Section
         Route::get('/sliders/index', [AdminSliderController::class, 'index'])->name('admin_slider_index')->middleware('permission:lihat.slider,admin');
-        Route::get('/sliders/create', [AdminSliderController::class, 'create'])->name('admin_slider_create');
+
+        Route::get('/sliders/create', [AdminSliderController::class, 'create'])->name('admin_slider_create')->middleware('permission:tambah.slider,admin');
+
         Route::post('/sliders/create', [AdminSliderController::class, 'create_submit'])->name('admin_slider_create_submit');
-        Route::get('/sliders/edit/{id}', [AdminSliderController::class, 'edit'])->name('admin_slider_edit');
+
+        Route::get('/sliders/edit/{id}', [AdminSliderController::class, 'edit'])->name('admin_slider_edit')->middleware('permission:edit.slider,admin');
+
         Route::post('/sliders/edit/{id}', [AdminSliderController::class, 'edit_submit'])->name('admin_slider_edit_submit');
         Route::get('/sliders/delete/{id}', [AdminSliderController::class, 'delete'])->name('admin_slider_delete');
 
@@ -168,9 +175,9 @@ Route::middleware(['admin:admin'])
 
         // Features Section
         Route::get('/features/index', [AdminFeatureController::class, 'index'])->name('admin_feature_index')->middleware('permission:lihat.fitur,admin');
-        Route::get('/features/create', [AdminFeatureController::class, 'create'])->name('admin_feature_create');
+        Route::get('/features/create', [AdminFeatureController::class, 'create'])->name('admin_feature_create')->middleware('permission:tambah.fitur,admin');
         Route::post('/features/create', [AdminFeatureController::class, 'create_submit'])->name('admin_feature_create_submit');
-        Route::get('/features/edit/{id}', [AdminFeatureController::class, 'edit'])->name('admin_feature_edit');
+        Route::get('/features/edit/{id}', [AdminFeatureController::class, 'edit'])->name('admin_feature_edit')->middleware('permission:edit.fitur,admin');
         Route::post('/features/edit/{id}', [AdminFeatureController::class, 'edit_submit'])->name('admin_feature_edit_submit');
         Route::get('/features/delete/{id}', [AdminFeatureController::class, 'delete'])->name('admin_feature_delete');
 
@@ -492,4 +499,6 @@ Route::prefix('admin')->group(function () {
     Route::post('/reset-password/{token}/{email}', [AdminAuthController::class, 'reset_password_submit'])->name('admin_reset_password_submit');
 });
 
+Route::get('/test-php', function (){
 
+});
